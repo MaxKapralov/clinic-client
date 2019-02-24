@@ -1,0 +1,29 @@
+<div>
+  <h2 mat-dialog-title>Add New Exercise</h2>
+  <div mat-dialog-content class="dialog" [formGroup]="newExerciseForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Weight</mat-label>
+      <input matInput formControlName="weight">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Number of repetitions</mat-label>
+      <input matInput type="number" formControlName="numOfRep">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Rest Time</mat-label>
+      <input matInput type="number" formControlName="restTimeInSec">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Number Of Series</mat-label>
+      <input matInput type="number" formControlName="numOfSeries">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" [disabled]="newExerciseForm.invalid" (click)="saveExercise()">Save Exercise</button>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  </div>
+</div>

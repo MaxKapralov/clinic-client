@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="openMenu()">
+      <mat-icon matTooltip="Menu">menu</mat-icon>
+    </button>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end">
+      <mat-list fxLayout fxLayoutGap="5px">
+        <mat-list-item fxHide.xs>
+          <button mat-icon-button>
+            <mat-icon class="white-icon" matTooltip="My Account">account_box</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item  fxHide.xs>
+          <button mat-icon-button>
+            <mat-icon class="white-icon" matTooltip="Card Membership">card_membership</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item fxHide.xs>
+          <button mat-icon-button>
+            <mat-icon class="white-icon" matTooltip="Settings">settings</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-icon-button>
+            <mat-icon class="white-icon" matTooltip="Log Out" (click)="logout()">exit_to_app</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

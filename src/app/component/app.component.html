@@ -1,0 +1,22 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over">
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <h2>Something Awesome App</h2>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-nav-list>
+      <h2 matSubheader>Trainings</h2>
+      <a mat-list-item (click)="addNewExercise()" *ngIf="authService.isAuthorize(roles.TRAINER)"><mat-icon>fitness_center</mat-icon>Add New Exercise</a>
+      <mat-divider></mat-divider>
+      <h2 matSubheader>My Life</h2>
+      <a mat-list-item (click)="sidenav.close()"><mat-icon>face</mat-icon>Me</a>
+      <a mat-list-item (click)="sidenav.close()"><mat-icon>group</mat-icon>My Friends</a>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-menu-bar (openSidenav)="openSidenav()" *ngIf="authService.isAuthenticated()"></app-menu-bar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
