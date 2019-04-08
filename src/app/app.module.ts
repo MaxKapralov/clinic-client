@@ -8,21 +8,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './module/material/material.module';
 import { AppRouterModule } from './module/router/app-router.module';
 import { LoginComponent } from './component/login/login.component';
-import { MainComponent } from './component/main/main.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { environment } from './environment';
 import { TokenStorageService } from './auth/token-storage.service';
-import { NewExerciseDialogComponent } from './component/new-exercise-dialog/new-exercise-dialog.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuBarComponent,
     LoginComponent,
-    MainComponent,
-    NewExerciseDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +41,14 @@ import { NewExerciseDialogComponent } from './component/new-exercise-dialog/new-
     })
 
   ],
-  providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [NewExerciseDialogComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
