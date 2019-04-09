@@ -8,6 +8,9 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class MenuBarComponent implements OnInit {
 
+  fonts: String[] = ['A', 'A+', 'A++'];
+  contrasts: String[] = ['First', 'Second', 'Third'];
+  languages: String[] = ['PL', 'EN'];
   @Output() openSidenav = new EventEmitter<any>();
   constructor(private authService: AuthService) { }
 

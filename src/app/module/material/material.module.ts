@@ -4,7 +4,7 @@ import {
   MatButtonModule, MatCardModule, MatDialogModule,
   MatIconModule,
   MatInputModule,
-  MatListModule,
+  MatListModule, MatSelectModule,
   MatSidenavModule,
   MatToolbarModule,
   MatTooltipModule
@@ -21,7 +21,8 @@ import {
     MatTooltipModule,
     MatSidenavModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   exports: [
     MatButtonModule,
@@ -32,7 +33,8 @@ import {
     MatTooltipModule,
     MatSidenavModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   declarations: []
 })
