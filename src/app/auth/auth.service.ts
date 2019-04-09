@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { TokenStorageService } from './token-storage.service';
 import { Router } from '@angular/router';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { AuthRequest } from '../model/auth-request';
 import { environment } from '../environment';
-import { AuthResponse } from '../model/auth-response';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { catchError, map, tap } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
@@ -13,8 +11,10 @@ import { Error } from 'tslint/lib/error';
 export enum Roles {
   USER = 'ROLE_USER',
   ADMIN = 'ROLE_ADMIN',
-  TRAINER = 'ROLE_TRAINER'
 }
+export const AUTH_TOKEN_HEADER = 'Authorization';
+export const AUTH_TOKEN_PREFIX = 'Bearer ';
+
 
 @Injectable({
   providedIn: 'root'
@@ -27,15 +27,11 @@ export class AuthService {
               private jwtHelperService: JwtHelperService) {
   }
 
-  auth(login: string, password: string): void {
-    const authRequest: AuthRequest = {
-      username: login,
-      password: password
-    };
-    this.http.post(this.authUrl, authRequest, { observe: 'response' }).pipe(
-      tap((response: HttpResponse<AuthResponse>) => {
-        const authResponse: AuthResponse = response.body;
-        this.tokenStorageService.setToken(authResponse.token);
+  auth(username: string, password: string): void {
+    this.http.post(this.authUrl, {username, password}, { observe: 'response' }).pipe(
+      tap((response: HttpResponse<null>) => {
+        const token = response.headers.get(AUTH_TOKEN_HEADER);
+        this.tokenStorageService.setToken(token.replace(AUTH_TOKEN_PREFIX, ''));
         this.router.navigate(['main']);
       }),
       map(response => response.ok),

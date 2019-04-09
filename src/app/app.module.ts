@@ -14,12 +14,14 @@ import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { environment } from './environment';
 import { TokenStorageService } from './auth/token-storage.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { MainComponent } from './component/main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuBarComponent,
     LoginComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
