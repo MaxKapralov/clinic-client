@@ -17,6 +17,9 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { MainComponent } from './component/main/main.component';
 import { StylesChangerService } from './service/styles-changer.service';
 import { RegistrationComponent } from './component/registration/registration.component';
+import { HeaderComponent } from './component/header/header.component';
+import { LoginPageComponent } from './component/login-page/login-page.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { RegistrationComponent } from './component/registration/registration.com
     LoginComponent,
     MainComponent,
     RegistrationComponent,
+    HeaderComponent,
+    LoginPageComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
