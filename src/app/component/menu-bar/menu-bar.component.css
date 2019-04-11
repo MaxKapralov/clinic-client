@@ -4,3 +4,19 @@
 .white-icon svg {
   fill: white;
 }
+.first-toolbar-row {
+}
+.second-toolbar-row {
+  background-color: darkblue;
+}
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100% !important;
+}
+a {
+  color: white;
+  text-decoration: none;
+}

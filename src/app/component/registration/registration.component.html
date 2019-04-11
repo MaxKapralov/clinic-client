@@ -1,0 +1,76 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title align="center">Rejestracja</mat-card-title>
+  </mat-card-header>
+  <mat-card-content [formGroup]="registrationForm" class="container">
+    <mat-form-field appearance="outline">
+      <mat-label>Imię</mat-label>
+      <input matInput type="text" formControlName="name">
+      <mat-error *ngIf="registrationForm.controls['name'].invalid">Imię jest polem obowiązkowym!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Nazwisko</mat-label>
+      <input matInput type="text" formControlName="surname">
+      <mat-error *ngIf="registrationForm.controls['surname'].invalid">Nazwisko jest polem obowiązkowym!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Pesel</mat-label>
+      <input matInput type="text" formControlName="pesel">
+      <mat-error *ngIf="registrationForm.controls['pesel'].invalid">Pesel jest polem obowiązkowym!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Numer telefonu(9 cyfr)</mat-label>
+      <input matInput type="text" formControlName="phoneNumber">
+      <mat-error *ngIf="registrationForm.controls['phoneNumber'].invalid">Numer telefonu jest polem obowiązkowym!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Nr domu</mat-label>
+      <input matInput type="text" formControlName="houseNumber">
+      <mat-error *ngIf="registrationForm.controls['houseNumber'].invalid">Numer domu jest polem obowiązkowym!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Numer mieszkania</mat-label>
+      <input matInput type="text" formControlName="flatNumber">
+      <mat-error *ngIf="registrationForm.controls['flatNumber'].invalid">Numer mieszkania jest polem obowiązkowym!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Ulica</mat-label>
+      <input matInput type="text" formControlName="street">
+      <mat-error *ngIf="registrationForm.controls['street'].invalid">Ulica jest polem obowiązkowym!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Miasto</mat-label>
+      <input matInput type="text" formControlName="city">
+      <mat-error *ngIf="registrationForm.controls['city'].invalid">Miasto jest polem obowiązkowym!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Kod pocztowy</mat-label>
+      <input matInput type="text" formControlName="zipCode">
+      <mat-error *ngIf="registrationForm.controls['zipCode'].invalid">Kod pocztowy jest polem obowiązkowym!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="text" formControlName="email">
+      <mat-error *ngIf="registrationForm.controls['email'].hasError('required')">Email jest polem obowiązkowym!</mat-error>
+      <mat-error *ngIf="registrationForm.controls['email'].hasError('email')">Niepoprawny adres email!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Hasło</mat-label>
+      <input matInput [type]="hidePass ? 'password' : 'text'" formControlName="password">
+      <mat-icon matSuffix (click)="hidePass = !hidePass">{{hidePass ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <mat-error *ngIf="registrationForm.controls['password'].hasError('required')">Hasło jest polem obowiązkowym!</mat-error>
+      <mat-error *ngIf="registrationForm.controls['password'].hasError('pattern')">Hasło musi zawierać dużą literę, małą literę, cyfre, znak specjalny i  mieć co najmniej 8 znaków!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Podtwierdz hasło</mat-label>
+      <input matInput [type]="hideConf ? 'password' : 'text'" formControlName="passwordConfirmation">
+      <mat-icon matSuffix (click)="hideConf = !hideConf">{{hideConf ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <mat-error *ngIf="registrationForm.controls['passwordConfirmation'].hasError('required')">Hasło jest polem obowiązkowym!</mat-error>
+      <mat-error *ngIf="registrationForm.controls['passwordConfirmation'].hasError('matchPasswords')">Hasła się nie zgadzają!</mat-error>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions align="center">
+    <button mat-raised-button color="primary" (click)="register()" [disabled]="registrationForm.invalid">Zarejestruj</button>
+    <button mat-raised-button color="warn" (click)="reset()">Reset</button>
+  </mat-card-actions>
+</mat-card>

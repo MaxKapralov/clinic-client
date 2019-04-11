@@ -6,3 +6,14 @@
 .login-header {
   margin: auto;
 }
+.left-div {
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.right-div {
+  margin-left: 220px;
+}
+button, input {
+  width: 100%;
+}

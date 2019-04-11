@@ -1,24 +1,45 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <button mat-icon-button (click)="openMenu()">
-      <mat-icon matTooltip="Menu">menu</mat-icon>
-    </button>
+<mat-toolbar class="bar">
+  <mat-toolbar-row class="first-toolbar-row">
     <div fxFlex fxLayout fxLayoutAlign="flex-end">
       <mat-list fxLayout fxLayoutGap="5px">
         <mat-list-item fxHide.xs>
-          <button mat-icon-button>
-            <mat-icon class="white-icon" matTooltip="My Account">account_box</mat-icon>
-          </button>
+          <mat-form-field>
+            <mat-label>Rozmiar czcionki</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let font of fonts" [value]="font">{{font}}</mat-option>
+            </mat-select>
+          </mat-form-field>
         </mat-list-item>
         <mat-list-item fxHide.xs>
-          <button mat-icon-button>
-            <mat-icon class="white-icon" matTooltip="Settings">settings</mat-icon>
-          </button>
+          <mat-form-field>
+            <mat-label>Kontrast</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let font of contrasts" [value]="font">{{font}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item fxHide.xs>
+          <mat-form-field>
+            <mat-label>Język</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let font of languages" [value]="font">{{font}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="second-toolbar-row">
+    <div fxFlex fxLayout fxLayoutAlign="flex-end">
+      <mat-list fxLayout fxLayoutGap="70px">
+        <mat-list-item fxHide.xs>
+          <a routerLink="/wizyta" (click)="change()">Zarezerwuj wizytę</a>
+        </mat-list-item>
+        <mat-list-item fxHide.xs>
+          <a routerLink="/">Logowanie</a>
         </mat-list-item>
         <mat-list-item>
-          <button mat-icon-button>
-            <mat-icon class="white-icon" matTooltip="Log Out" (click)="logout()">exit_to_app</mat-icon>
-          </button>
+          <a routerLink="/registration">Rejestracja</a>
         </mat-list-item>
       </mat-list>
     </div>

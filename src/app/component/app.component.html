@@ -1,18 +1,2 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="over">
-    <mat-toolbar>
-      <mat-toolbar-row>
-        <h2>Przychodnia</h2>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <mat-nav-list>
-      <h2 matSubheader>Subheader</h2>
-      <a mat-list-item (click)="sidenav.close()"><mat-icon>face</mat-icon>Me</a>
-      <mat-divider></mat-divider>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <app-menu-bar (openSidenav)="openSidenav()" *ngIf="authService.isAuthenticated()"></app-menu-bar>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<app-menu-bar></app-menu-bar>
+<router-outlet></router-outlet>
