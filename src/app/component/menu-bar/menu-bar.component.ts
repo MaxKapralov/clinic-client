@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
+import { StylesChangerService } from '../../service/styles-changer.service';
 
 @Component({
   selector: 'app-menu-bar',
@@ -11,16 +12,18 @@ export class MenuBarComponent implements OnInit {
   fonts: String[] = ['A', 'A+', 'A++'];
   contrasts: String[] = ['First', 'Second', 'Third'];
   languages: String[] = ['PL', 'EN'];
-  @Output() openSidenav = new EventEmitter<any>();
-  constructor(private authService: AuthService) { }
+
+  constructor(private authService: AuthService, private stylesChangerService: StylesChangerService) {
+  }
 
   ngOnInit() {
   }
 
-  openMenu() {
-    this.openSidenav.emit();
-  }
   logout() {
     this.authService.logout();
+  }
+
+  change() {
+    this.stylesChangerService.changeStyleTo({ textClass: 'red' });
   }
 }

@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar class="bar">
   <mat-toolbar-row class="first-toolbar-row">
     <div fxFlex fxLayout fxLayoutAlign="flex-end">
       <mat-list fxLayout fxLayoutGap="5px">
@@ -33,10 +33,10 @@
     <div fxFlex fxLayout fxLayoutAlign="flex-end">
       <mat-list fxLayout fxLayoutGap="70px">
         <mat-list-item fxHide.xs>
-          <a routerLink="/wizyta">Zarezerwuj wizytę</a>
+          <a routerLink="/wizyta" (click)="change()">Zarezerwuj wizytę</a>
         </mat-list-item>
         <mat-list-item fxHide.xs>
-          <a routerLink="/login">Logowanie</a>
+          <a routerLink="/">Logowanie</a>
         </mat-list-item>
         <mat-list-item>
           <a routerLink="/registration">Rejestracja</a>

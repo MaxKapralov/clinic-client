@@ -15,6 +15,8 @@ import { environment } from './environment';
 import { TokenStorageService } from './auth/token-storage.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { MainComponent } from './component/main/main.component';
+import { StylesChangerService } from './service/styles-changer.service';
+import { RegistrationComponent } from './component/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { MainComponent } from './component/main/main.component';
     MenuBarComponent,
     LoginComponent,
     MainComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,10 @@ import { MainComponent } from './component/main/main.component';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
       multi: true
+    },
+    {
+      provide: StylesChangerService,
+      useClass: StylesChangerService
     }
   ],
   bootstrap: [AppComponent]
