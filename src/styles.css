@@ -1,9 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-.blue {
-  color: blue;
+.yellow-black-theme-text {
+  color: white;
 }
-.red {
-  color: red;
+.yellow-black-theme-body {
+  background-color: yellow;
+}
+.yellow-black-theme-dialog {
+  background-color: black;
+}
+.default-theme-text {
+  color: blue
+}
+.default-theme-dialog {
+  background-color: white;
 }

@@ -2,7 +2,10 @@ import { Subject } from 'rxjs';
 
 export class StylesChangerService {
 
-  classes: any = { textClass: 'blue' };
+  classes: any = {
+    textClass: 'default-theme-text',
+    dialogClass: 'default-theme-dialog'
+  };
   private changeStyle: Subject<void> = new Subject<void>();
   public changeStyleEvent = this.changeStyle.asObservable();
 

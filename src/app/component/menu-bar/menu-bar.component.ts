@@ -24,6 +24,6 @@ export class MenuBarComponent implements OnInit {
   }
 
   change() {
-    this.stylesChangerService.changeStyleTo({ textClass: 'red' });
+    this.stylesChangerService.changeStyleTo({ textClass: 'yellow-black-theme-text',  dialogClass: 'yellow-black-theme-dialog'});
   }
 }
