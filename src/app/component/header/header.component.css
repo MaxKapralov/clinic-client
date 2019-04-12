@@ -36,16 +36,6 @@
 
 }
 
-p.addmenu
-{
-  font-color: #15375A;
-  font-size: 13px;
-  align: left;
-  margin: 0px;
-  padding: 5px;
-  padding-left: 10px;
-
-}
 
 #Asmall
 {
@@ -140,16 +130,6 @@ p.addmenu
   padding-left: 10px;
 }
 
-#menusection
-{
-  background-color: #15375A;
-  height: 50px;
-  margin-top: 5px;
-  padding: 0px;
-  padding-right: 7%;
-  border-top: 1.5px solid #15375A;
-  border-bottom: 1.5px solid #15375A;
-}
 
 #topnav
 {
@@ -170,11 +150,4 @@ p.addmenu
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 0px;
-
-}
-
-.menu a
-{
-  color: #ffffff;
-  text-decoration: none;
 }
