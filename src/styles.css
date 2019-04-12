@@ -6,44 +6,8 @@ body
   font-size: 16px;
   color: #15375A;
   margin: 0px;
-
-}
-#addsection
-{
-  height: 50px;
-  margin-bottom: 0px;
-  margin-top: 10px;
-  padding-bottom: 10px;
 }
 
-.logo
-{
-  padding-left: 50px;
-  padding-top: 5px;
-  height: 50px;
-  width: 50%;
-  margin: 0px;
-  float: left;
-}
-
-#logoimage
-{
-  width: auto;
-  height: 45px;
-  padding: 0px;
-  margin: 0px;
-  margin-bottom: 10px;
-
-}
-
-.fontsize
-{
-  height: 50px;
-  width: 15%;
-  margin-left: 5px;
-  float: left;
-
-}
 
 p.addmenu
 {
@@ -56,88 +20,6 @@ p.addmenu
 
 }
 
-#Asmall
-{
-  width: auto;
-  height: 30px;
-  padding-left: 10px;
-  float: left;
-}
-#Amedium
-{
-  width: auto;
-  height: 30px;
-  padding-left: 10px;
-  float: left;
-}
-#Abig
-{
-  width: auto;
-  height: 30px;
-  padding-left: 10px;
-  float: left;
-}
-
-.pagecolor
-{
-  height: 50px;
-  width: 15%;
-  float: left;
-  margin-left: 5px;
-}
-
-#blue
-{
-  width: auto;
-  height: 25px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-
-
-}
-#black
-{
-  width: auto;
-  height: 25px;
-  margin-bottom: 10px;
-}
-#yellow
-{
-  width: auto;
-  height: 25px;
-  margin-bottom: 10px;
-}
-
-#darkblue
-{
-  width: auto;
-  height: 25px;
-  margin-bottom: 10px;
-
-}
-.language
-{
-  height: 50px;
-  width: 10%;
-  float: left;
-  margin-left: 5px;
-}
-
-.lang
-{
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-.lang > li
-{
-  display: inline-block;
-  margin: 0px;
-  padding: 0px;
-  padding-bottom: 10px;
-
-}
 
 .lang a
 {
@@ -160,27 +42,7 @@ p.addmenu
   border-bottom: 1.5px solid #15375A;
 }
 
-#topnav
-{
-  padding: 0px;
-}
 
-.menu
-{
-  list-style-type: none;
-  min-height: 20px;
-  text-align: right;
-  padding-bottom: 10px;
-}
-
-.menu > li
-{
-  display: inline-block;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 0px;
-
-}
 
 .menu a
 {
@@ -218,12 +80,6 @@ input[type=text], input[type=password]
   font-size: 15px;
 }
 
-input[type=text]:focus, input[type=password]:focus
-{
-
-  opacity: 0.5;
-
-}
 
 .container h1
 {
@@ -242,12 +98,6 @@ input[type=text]:focus, input[type=password]:focus
 
 }
 
-.terms
-{
-  font-size: 12px;
-  margin-top: 0px;
-  padding: 0px;
-}
 
 .registerbtn {
   background-color: #15375A;
@@ -268,40 +118,11 @@ input[type=text]:focus, input[type=password]:focus
   border-bottom-left-radius: 0px;
 }
 
-.registerbtn:hover {
-  opacity:0.7;
-}
-
 a
 {
   color: dodgerblue;
 }
 
-.resetpsw
-{
-  float:left;
-  width: 50%
-
-}
-.resetpsw p
-{
-  text-align: left;
-  margin: 0px;
-  padding-left: 20px;
-}
-
-.registration
-{
-  float:left;
-  width: 50%
-}
-
-.registration p
-{
-  text-align: right;
-  margin: 0px;
-  padding-right: 20px;
-}
 
 #footer
 {
@@ -312,23 +133,6 @@ a
   padding-bottom: 15px;
 }
 
-#bottomnav
-{
-  text-align: center;
-  padding: 10px;
-  padding-bottom: 0px;
-
-}
-
-.bottommenu
-{
-  list-style-type: none;
-  margin: 0px;
-  padding: 10px;
-  font-size: 14px;
-  min-height: 38px;
-  line-height: 200%;
-}
 
 .bottommenu > li
 {
@@ -351,21 +155,6 @@ a
 }
 
 
-
-.contact
-{
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-  font-size: 12px;
-}
-
-.contact > li
-{
-  display: inline-block;
-  padding-left: 1px;
-  padding-right: 1px;
-}
 
 .contact a
 {

@@ -20,6 +20,7 @@ import { RegistrationComponent } from './component/registration/registration.com
 import { HeaderComponent } from './component/header/header.component';
 import { LoginPageComponent } from './component/login-page/login-page.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { RegistrationPageComponent } from './component/registration-page/registration-page.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FooterComponent } from './component/footer/footer.component';
     HeaderComponent,
     LoginPageComponent,
     FooterComponent,
+    RegistrationPageComponent,
   ],
   imports: [
     BrowserModule,
