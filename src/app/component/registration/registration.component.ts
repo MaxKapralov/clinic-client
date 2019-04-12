@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewUser } from '../../model/new-user';
 import { NewUserService } from '../../service/new-user.service';
 import { Router } from '@angular/router';
+import { PasswordValidator } from '../../password-validator';
 
 @Component({
   selector: 'app-registration',
@@ -17,17 +18,17 @@ export class RegistrationComponent implements OnInit {
     this.registrationForm = builder.group({
       name: [null, Validators.required],
       surname: [null, Validators.required],
-      pesel: [null, Validators.required],
-      phoneNumber: [null, Validators.required],
+      pesel: [null, [Validators.required, Validators.pattern(/^\d{11}$/)]],
+      phoneNumber: [null, [Validators.required, Validators.pattern(/^\d{9}$/)]],
       streetNumber: [null, Validators.required],
       flatNumber: [null, Validators.required],
       street: [null, Validators.required],
       city: [null, Validators.required],
       zipCode: [null, Validators.required],
       email: [null, Validators.required],
-      password: [null, Validators.required],
-      confirmPassword: [null, Validators.required]// todo validation here!!!
-    });
+      password: [null, [Validators.required, Validators.pattern(/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/)]],
+      confirmPassword: [null, Validators.required]
+    }, {validator: PasswordValidator.matchPassword});
   }
 
   ngOnInit() {
