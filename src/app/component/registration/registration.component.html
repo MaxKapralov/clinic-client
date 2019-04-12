@@ -3,23 +3,25 @@
     <p>Posiadasz konto? Prosimy o <a routerLink="/">Zalogowanie</a></p>
     <p>Nie posiadasz konta? Zarejestruj się:</p>
 
-    <div class=" inputs-grid">
-      <input type="text" placeholder="Imię">
-      <input type="text" placeholder="Nazwisko">
-      <input type="text" placeholder="Pesel">
-      <input type="text" placeholder="Nr telefonu (9 cyfr)">
-      <input type="text" placeholder="Nr domu">
-      <input type="text" placeholder="Nr mieszkania">
-      <input type="text" placeholder="Ulica">
-      <input type="text" placeholder="Miasto">
-      <input type="text" placeholder="Kod pocztowy">
-      <input type="text" placeholder="E-mail">
-      <input type="text" placeholder="Hasło">
-      <input type="text" placeholder="Potwierdź Hasło">
+    <div class=" inputs-grid" [formGroup]="registrationForm">
+      <input type="text" placeholder="Imię" formControlName="name">
+      <!--
+      <span style="color: red" *ngIf="registrationForm.controls['name'].invalid && registrationForm.controls['name'].touched">Error</span>
+      -->
+      <input type="text" placeholder="Nazwisko" formControlName="surname">
+      <input type="text" placeholder="Pesel" formControlName="pesel">
+      <input type="text" placeholder="Nr telefonu (9 cyfr)" formControlName="phoneNumber">
+      <input type="text" placeholder="Nr domu" formControlName="streetNumber">
+      <input type="text" placeholder="Nr mieszkania" formControlName="flatNumber">
+      <input type="text" placeholder="Ulica" formControlName="street">
+      <input type="text" placeholder="Miasto" formControlName="city">
+      <input type="text" placeholder="Kod pocztowy" formControlName="zipCode">
+      <input type="text" placeholder="E-mail" formControlName="email">
+      <input type="text" placeholder="Hasło" formControlName="password">
+      <input type="text" placeholder="Potwierdź Hasło" formControlName="confirmPassword">
     </div>
-    <button type="submit" class="registerbtn">Zarejestruj się</button>
-
-
-
+    <button type="submit" class="registerbtn" [disabled]="registrationForm.invalid" (click)="register()">Zarejestruj
+      się
+    </button>
   </div>
 </div>
