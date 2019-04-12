@@ -5,10 +5,12 @@ import { LoginPageComponent } from '../../component/login-page/login-page.compon
 import {RegistrationComponent} from '../../component/registration/registration.component';
 
 
-const routes: Routes = [{ path: '', component: LoginPageComponent },
+const routes: Routes = [
+  { path: '', component: LoginPageComponent },
   { path: 'main', component: MainComponent },
   {path: 'registration', component: RegistrationComponent}
   ];
+];
 
 @NgModule({
   declarations: [],

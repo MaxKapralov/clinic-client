@@ -29,7 +29,6 @@ import { RegistrationComponent } from './component/registration/registration.com
     LoginPageComponent,
     FooterComponent,
     RegistrationComponent,
-
   ],
   imports: [
     BrowserModule,
