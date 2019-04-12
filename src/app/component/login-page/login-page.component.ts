@@ -24,5 +24,4 @@ export class LoginPageComponent implements OnInit {
     const password = this.loginForm.controls['password'].value;
     this.authService.auth(username, password);
   }
-
 }
