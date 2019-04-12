@@ -1,19 +1,18 @@
 <div>
-
-    <div class="container">
+    <div class="container" [formGroup]="loginForm">
       <h1>Witamy w Panelu Placówki ORZO</h1>
-      <p>Zaloguj się lub <a href="#">Zarejestruj się</a></p>
-      <input type="text" placeholder="E-mail" name="email" required>
-      <input type="password" placeholder="HasĹ‚o" name="psw" required>
-      <button type="submit" class="registerbtn">Zaloguj się</button>
-      <p class="terms">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+      <p>Zaloguj się lub <a routerLink="/registration">Zarejestruj się</a></p>
+      <input type="text" placeholder="E-mail" formControlName="username">
+      <input type="password" placeholder="Hasło" formControlName="password">
+      <button type="submit" class="registerbtn" (click)="login()" [disabled]="loginForm.invalid">Zaloguj się</button>
+      <p class="terms">By creating an account you agree to our <a routerLink="/terms">Terms & Privacy</a>.</p>
       <div class="resetpsw">
         <p>Nie pamiętasz hasła?</p>
-        <p><a href="#">Zresetuj hasło</a></p>
+        <p><a routerLink="/reset-password">Zresetuj hasło</a></p>
       </div>
       <div class="registration">
         <p>Nie masz konta?</p>
-        <p><a href="#">Zarejestruj się</a></p>
+        <p><a routerLink="/registration">Zarejestruj się</a></p>
       </div>
     </div>
 </div>
