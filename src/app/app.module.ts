@@ -18,6 +18,7 @@ import { StylesChangerService } from './service/styles-changer.service';
 import { HeaderComponent } from './component/header/header.component';
 import { LoginPageComponent } from './component/login-page/login-page.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { RegistrationComponent } from './component/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FooterComponent } from './component/footer/footer.component';
     HeaderComponent,
     LoginPageComponent,
     FooterComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
