@@ -20,6 +20,7 @@ import { LoginPageComponent } from './component/login-page/login-page.component'
 import { FooterComponent } from './component/footer/footer.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { ReservationComponent } from './component/reservation/reservation.component';
+import { PersonaldataComponent } from './component/personaldata/personaldata.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ReservationComponent } from './component/reservation/reservation.compon
     FooterComponent,
     RegistrationComponent,
     ReservationComponent,
+    PersonaldataComponent,
   ],
   imports: [
     BrowserModule,
