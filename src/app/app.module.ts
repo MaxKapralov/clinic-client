@@ -22,6 +22,10 @@ import { RegistrationComponent } from './component/registration/registration.com
 import { ReservationComponent } from './component/reservation/reservation.component';
 import { PersonaldataComponent } from './component/personaldata/personaldata.component';
 import { HistoryComponent } from './component/history/history.component';
+import { CalendarComponent } from './component/calendar/calendar.component';
+import { PatientsComponent } from './component/patients/patients.component';
+import { DoctorsComponent } from './component/doctors/doctors.component';
+import { ServicesComponent } from './component/services/services.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,10 @@ import { HistoryComponent } from './component/history/history.component';
     ReservationComponent,
     PersonaldataComponent,
     HistoryComponent,
+    CalendarComponent,
+    PatientsComponent,
+    DoctorsComponent,
+    ServicesComponent,
   ],
   imports: [
     BrowserModule,
