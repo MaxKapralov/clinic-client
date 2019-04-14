@@ -1,0 +1,68 @@
+.row {
+  padding-top: 0px;
+  margin-top: 0px;
+  width: 40%;
+  margin-left: 30%;
+}
+
+#usluga
+{
+  width: 100%
+}
+
+.calendar{
+  padding-top: 20px;
+  margin-top: 0px;
+  width: 80%;
+  padding-left: 10%;
+}
+
+#od{
+  width: 42%;
+
+}
+#do{
+  width: 42%;
+}
+
+.container
+{
+  height: max-content;
+padding-bottom: 50px;
+}
+
+
+.zdjecie
+{
+  padding-left: 20px;
+  padding-top: 10px;
+  height: 60%;
+  width: 40%;
+  float: left;
+}
+
+#doctorimage
+{
+  width: 80%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.table, td, td{
+  border: 1px solid black;
+  padding-top: 1px;
+}
+
+.czas p
+{
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.czas
+{
+  float: left;
+  margin-top: 8px;
+
+}
