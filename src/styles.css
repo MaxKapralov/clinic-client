@@ -171,3 +171,34 @@ a
 
 }
 
+.selectbtn{
+  background-color: #15375A;
+  color: #ffffff;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border: 1px solid #15375A;
+  cursor: pointer;
+  width: 100%;
+  opacity: 1;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+}
+
+
+
+.lekarzitermin{
+  background-color: #F5F6F7;
+  padding: 15px;
+  margin: 75px;
+  margin-left: 100px;
+  padding-left: 35px;
+  width: 35%;
+  height: 180px;
+  border-radius: 20px;
+  border: 0.5px solid #15375A;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
