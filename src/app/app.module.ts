@@ -21,6 +21,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { ReservationComponent } from './component/reservation/reservation.component';
 import { PersonaldataComponent } from './component/personaldata/personaldata.component';
+import { HistoryComponent } from './component/history/history.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { PersonaldataComponent } from './component/personaldata/personaldata.com
     RegistrationComponent,
     ReservationComponent,
     PersonaldataComponent,
+    HistoryComponent,
   ],
   imports: [
     BrowserModule,

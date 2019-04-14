@@ -202,3 +202,8 @@ a
   border: 0.5px solid #15375A;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+th{
+  background: #15375A;
+  color: #ffffff;
+}

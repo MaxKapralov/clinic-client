@@ -5,6 +5,7 @@ import { LoginPageComponent } from '../../component/login-page/login-page.compon
 import {RegistrationComponent} from '../../component/registration/registration.component';
 import {ReservationComponent} from '../../component/reservation/reservation.component';
 import {PersonaldataComponent} from '../../component/personaldata/personaldata.component';
+import {HistoryComponent} from '../../component/history/history.component';
 
 
 
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'main', component: MainComponent },
   {path: 'registration', component: RegistrationComponent},
   {path: 'reservation', component: ReservationComponent},
-  {path: 'personaldata', component: PersonaldataComponent}
+  {path: 'personaldata', component: PersonaldataComponent},
+  {path: 'history', component: HistoryComponent}
 ];
 
 @NgModule({
