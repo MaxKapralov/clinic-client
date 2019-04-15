@@ -26,6 +26,7 @@ import { CalendarComponent } from './component/calendar/calendar.component';
 import { PatientsComponent } from './component/patients/patients.component';
 import { DoctorsComponent } from './component/doctors/doctors.component';
 import { ServicesComponent } from './component/services/services.component';
+import { ConfirmationComponent } from './component/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ServicesComponent } from './component/services/services.component';
     PatientsComponent,
     DoctorsComponent,
     ServicesComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,
