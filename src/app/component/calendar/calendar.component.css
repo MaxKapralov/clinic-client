@@ -1,0 +1,52 @@
+.row {
+  padding-top: 0px;
+  margin-top: 0px;
+  width: 30%;
+  float: left;
+  padding-left: 15%;
+}
+
+#usluga
+{
+  width: 100%
+}
+
+.calendar{
+  width:30%;
+  float: left;
+  padding-left: 10%;
+}
+
+.container
+{
+  height: max-content;
+  padding-bottom: 30px;
+  width: 60%;
+  margin-left: 20%;
+  height: 100px;
+  padding-top: 25px;
+  margin-bottom: 10px;
+}
+
+.table{
+  border-collapse: collapse;
+}
+
+.table, td, th{
+  border: 1px solid black;
+  padding-top: 1px;
+}
+
+
+.lekarzitermin{
+  padding: 15px;
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 15%;
+  height: 300px;
+  text-align: center;
+}
+
+.timetable{
+  padding-left: 50px;
+}
