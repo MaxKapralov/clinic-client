@@ -20,7 +20,7 @@ import { LoginPageComponent } from './component/login-page/login-page.component'
 import { FooterComponent } from './component/footer/footer.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { ReservationComponent } from './component/reservation/reservation.component';
-import { PersonaldataComponent } from './component/personaldata/personaldata.component';
+import { PersonalDataComponent } from './component/personaldata/personal-data.component';
 import { HistoryComponent } from './component/history/history.component';
 import { CalendarComponent } from './component/calendar/calendar.component';
 import { PatientsComponent } from './component/patients/patients.component';
@@ -37,7 +37,7 @@ import { ServicesComponent } from './component/services/services.component';
     FooterComponent,
     RegistrationComponent,
     ReservationComponent,
-    PersonaldataComponent,
+    PersonalDataComponent,
     HistoryComponent,
     CalendarComponent,
     PatientsComponent,

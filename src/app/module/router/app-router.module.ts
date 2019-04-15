@@ -4,7 +4,7 @@ import { MainComponent } from '../../component/main/main.component';
 import { LoginPageComponent } from '../../component/login-page/login-page.component';
 import {RegistrationComponent} from '../../component/registration/registration.component';
 import {ReservationComponent} from '../../component/reservation/reservation.component';
-import {PersonaldataComponent} from '../../component/personaldata/personaldata.component';
+import {PersonalDataComponent} from '../../component/personaldata/personal-data.component';
 import {HistoryComponent} from '../../component/history/history.component';
 import {ServicesComponent} from '../../component/services/services.component';
 import {DoctorsComponent} from '../../component/doctors/doctors.component';
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'main', component: MainComponent },
   {path: 'registration', component: RegistrationComponent},
   {path: 'reservation', component: ReservationComponent},
-  {path: 'personaldata', component: PersonaldataComponent},
+  {path: 'personal-data', component: PersonalDataComponent},
   {path: 'history', component: HistoryComponent},
   {path: 'services', component: ServicesComponent},
   {path: 'doctors', component: DoctorsComponent},
