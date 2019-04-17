@@ -1,0 +1,43 @@
+.container
+{
+  padding: 5px;
+  margin: 75px;
+  width: 26%;
+  height: 330px;
+  margin-left: 37%;
+  padding-bottom: 50px;
+
+}
+table{
+  float: left;
+}
+
+table, th, td {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-collapse: collapse;
+  margin-left: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+
+td{
+  padding-left: 60px;
+}
+
+.buttons{
+
+  margin-left: 60px;
+  width: 260px;
+}
+
+
+th{
+  background: none;
+  color: black;
+}

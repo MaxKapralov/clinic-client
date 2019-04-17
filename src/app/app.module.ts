@@ -20,6 +20,13 @@ import { LoginPageComponent } from './component/login-page/login-page.component'
 import { FooterComponent } from './component/footer/footer.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { ReservationComponent } from './component/reservation/reservation.component';
+import { PersonalDataComponent } from './component/personaldata/personal-data.component';
+import { HistoryComponent } from './component/history/history.component';
+import { CalendarComponent } from './component/calendar/calendar.component';
+import { PatientsComponent } from './component/patients/patients.component';
+import { DoctorsComponent } from './component/doctors/doctors.component';
+import { ServicesComponent } from './component/services/services.component';
+import { ConfirmationComponent } from './component/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +38,13 @@ import { ReservationComponent } from './component/reservation/reservation.compon
     FooterComponent,
     RegistrationComponent,
     ReservationComponent,
+    PersonalDataComponent,
+    HistoryComponent,
+    CalendarComponent,
+    PatientsComponent,
+    DoctorsComponent,
+    ServicesComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,

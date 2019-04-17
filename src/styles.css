@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 body
-{ background-color: #F7F8F9;
+{ background-color: white;
   font-family: 'Open Sans',sans-serif;
   font-size: 16px;
   color: #15375A;
@@ -11,7 +11,7 @@ body
 
 p.addmenu
 {
-  font-color: #15375A;
+  font-color: #171B34;
   font-size: 13px;
   align: left;
   margin: 0px;
@@ -33,10 +33,11 @@ p.addmenu
 
 #menusection
 {
-  background-color: #15375A;
-  height: 50px;
+  background-color: #314455;
+
+  height: 40px;
   margin-top: 5px;
-  padding: 0px;
+padding-bottom: 10px;
   padding-right: 7%;
   border-top: 1.5px solid #15375A;
   border-bottom: 1.5px solid #15375A;
@@ -58,9 +59,9 @@ p.addmenu
   width: 37%;
   height: 330px;
   margin-left: 30%;
-  border-radius: 20px;
+  border-radius: 5px;
   border: 0.5px solid #15375A;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -100,7 +101,7 @@ input[type=text], input[type=password]
 
 
 .registerbtn {
-  background-color: #15375A;
+  background-color: #C96567;
   color: #ffffff;
   font-size: 15px;
   text-transform: uppercase;
@@ -110,11 +111,11 @@ input[type=text], input[type=password]
   margin-left: auto;
   margin-right: auto;
   padding: 10px 20px;
-  border: 1px solid #15375A;
+
   cursor: pointer;
   width: 95%;
   opacity: 1;
-  border-radius: 10px;
+  border-radius: 5px;
   border-bottom-left-radius: 0px;
 }
 
@@ -127,7 +128,7 @@ a
 #footer
 {
   display: block;
-  background-color: #15375A;
+  background-color: #1E2B3A;
   text-align: center;
   margin: 0px;
   padding-bottom: 15px;
@@ -172,7 +173,7 @@ a
 }
 
 .selectbtn{
-  background-color: #15375A;
+  background-color: #171B34;
   color: #ffffff;
   font-size: 12px;
   text-transform: uppercase;
@@ -184,7 +185,7 @@ a
   cursor: pointer;
   width: 100%;
   opacity: 1;
-  border-radius: 10px;
+  border-radius: 5px;
   border-bottom-left-radius: 0px;
 }
 
@@ -201,4 +202,9 @@ a
   border-radius: 20px;
   border: 0.5px solid #15375A;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+th{
+  background: #15375A;
+  color: #ffffff;
 }

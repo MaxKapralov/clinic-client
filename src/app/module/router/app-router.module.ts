@@ -4,14 +4,28 @@ import { MainComponent } from '../../component/main/main.component';
 import { LoginPageComponent } from '../../component/login-page/login-page.component';
 import {RegistrationComponent} from '../../component/registration/registration.component';
 import {ReservationComponent} from '../../component/reservation/reservation.component';
+import {PersonalDataComponent} from '../../component/personaldata/personal-data.component';
+import {HistoryComponent} from '../../component/history/history.component';
+import {ServicesComponent} from '../../component/services/services.component';
+import {DoctorsComponent} from '../../component/doctors/doctors.component';
+import {PatientsComponent} from '../../component/patients/patients.component';
+import {CalendarComponent} from '../../component/calendar/calendar.component';
+import {ConfirmationComponent} from '../../component/confirmation/confirmation.component';
+
 
 
 const routes: Routes = [
   { path: '', component: LoginPageComponent },
   { path: 'main', component: MainComponent },
   {path: 'registration', component: RegistrationComponent},
-  {path: 'reservation', component: ReservationComponent}
-
+  {path: 'reservation', component: ReservationComponent},
+  {path: 'personal-data', component: PersonalDataComponent},
+  {path: 'history', component: HistoryComponent},
+  {path: 'services', component: ServicesComponent},
+  {path: 'doctors', component: DoctorsComponent},
+  {path: 'patients', component: PatientsComponent},
+  {path: 'calendar', component: CalendarComponent},
+  {path: 'confirmation', component: ConfirmationComponent}
 ];
 
 @NgModule({
