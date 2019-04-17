@@ -10,6 +10,7 @@ import {ServicesComponent} from '../../component/services/services.component';
 import {DoctorsComponent} from '../../component/doctors/doctors.component';
 import {PatientsComponent} from '../../component/patients/patients.component';
 import {CalendarComponent} from '../../component/calendar/calendar.component';
+import {ConfirmationComponent} from '../../component/confirmation/confirmation.component';
 
 
 
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'services', component: ServicesComponent},
   {path: 'doctors', component: DoctorsComponent},
   {path: 'patients', component: PatientsComponent},
-  {path: 'calendar', component: CalendarComponent}
+  {path: 'calendar', component: CalendarComponent},
+  {path: 'confirmation', component: ConfirmationComponent}
 ];
 
 @NgModule({
