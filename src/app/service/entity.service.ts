@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from '../environment';
 import { catchError } from 'rxjs/operators';
 import { EMPTY, Observable } from 'rxjs';
@@ -33,8 +33,8 @@ export abstract class EntityService<T extends Entity> {
     );
   }
 
-  getAll(): Observable<T[]> {
-    return this.http.get<T[]>(this.url).pipe(
+  getAll(params?: HttpParams): Observable<T[]> {
+    return this.http.get<T[]>(this.url, {params: params}).pipe(
       catchError(error => {
         console.log(error);
         return EMPTY;
