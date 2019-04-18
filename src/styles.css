@@ -33,7 +33,7 @@ p.addmenu
 
 #menusection
 {
-  background-color: #314455;
+  background-color: #1E2B3A;
 
   height: 40px;
   margin-top: 5px;
@@ -53,31 +53,33 @@ padding-bottom: 10px;
 
 
 .container {
-  background-color: #F5F6F7;
+  background-color: white;
   padding: 16px;
   margin: 75px;
   width: 37%;
-  height: 330px;
+  height: 350px;
   margin-left: 30%;
-  border-radius: 5px;
-  border: 0.5px solid #15375A;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 7px 2px rgba(199,199,199,0.75);
+  -moz-box-shadow: 0px 1px 7px 2px rgba(199,199,199,0.75);
+  box-shadow: 0px 1px 7px 2px rgba(199,199,199,0.75);
 }
 
 
 input[type=text], input[type=password]
 {
   height: 5px;
-  width: 87%;
+  width: 90%;
   padding: 15px;
   text-align: center;
   margin-top: 5px;
   margin-bottom: 10px;
   display: block;
-  margin-left: auto;
+  margin-left: 5%;
   margin-right: auto;
-  border: 1px solid #15375A;
-  border-radius: 10px;
+
+  box-sizing: border-box;
+
   font-size: 15px;
 }
 
@@ -106,16 +108,15 @@ input[type=text], input[type=password]
   font-size: 15px;
   text-transform: uppercase;
   display: block;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 5%;
   padding: 10px 20px;
 
   cursor: pointer;
-  width: 95%;
+  width: 90%;
   opacity: 1;
-  border-radius: 5px;
+  border-radius: 2px;
   border-bottom-left-radius: 0px;
 }
 
@@ -173,7 +174,7 @@ a
 }
 
 .selectbtn{
-  background-color: #171B34;
+  background-color: #C96567;
   color: #ffffff;
   font-size: 12px;
   text-transform: uppercase;
@@ -181,7 +182,7 @@ a
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 5px 10px;
-  border: 1px solid #15375A;
+
   cursor: pointer;
   width: 100%;
   opacity: 1;
@@ -192,15 +193,14 @@ a
 
 
 .lekarzitermin{
-  background-color: #F5F6F7;
+  background-color: white;
   padding: 15px;
   margin: 75px;
   margin-left: 100px;
   padding-left: 35px;
   width: 35%;
   height: 180px;
-  border-radius: 20px;
-  border: 0.5px solid #15375A;
+  border-radius: 2px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
