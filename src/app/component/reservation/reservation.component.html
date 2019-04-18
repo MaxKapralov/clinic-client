@@ -36,7 +36,9 @@
       <p>{{key}}</p>
       <table>
         <tr>
-          <td *ngFor="let t of appointment.appointments[key]">{{utils.getTime(t.term)}}</td>
+          <td *ngFor="let t of appointment.appointments[key]">
+            <button (click)="reserve(t.id)" [disabled]="!t.free" class="term" >{{utils.getTime(t.term)}}</button>
+          </td>
       </table>
     </div>
   </div>

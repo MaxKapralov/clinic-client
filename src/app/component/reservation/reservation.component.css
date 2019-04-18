@@ -1,6 +1,6 @@
 .row {
-  padding-top: 0px;
-  margin-top: 0px;
+  padding-top: 0;
+  margin-top: 0;
   width: 40%;
   margin-left: 30%;
 }
@@ -12,7 +12,7 @@
 
 .calendar{
   padding-top: 20px;
-  margin-top: 0px;
+  margin-top: 0;
   width: 80%;
   padding-left: 10%;
 }
@@ -44,8 +44,8 @@
 #doctorimage
 {
   width: 80%;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 .table, td, td{
@@ -65,4 +65,21 @@
   float: left;
   margin-top: 8px;
 
+}
+.term {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.term:hover {
+  background-color: rgba(43,39,44,0.1);
+  cursor: pointer;
+}
+.term[disabled] {
+  background-color: rgba(43,39,44,0.1);
+  cursor: default;
 }

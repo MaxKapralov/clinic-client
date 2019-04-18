@@ -55,6 +55,13 @@ export class AuthService {
     }
     throw new Error('Not authenticated');
   }
+  getUsername(): string {
+    if (this.isAuthenticated()) {
+      const token = this.tokenStorageService.getToken();
+      return this.jwtHelperService.decodeToken(token)['sub'];
+    }
+    throw new Error('Not Authenticated');
+  }
 
   isAuthorize(...roles: Roles[]) {
     if (this.isAuthenticated()) {

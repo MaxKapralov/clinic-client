@@ -19,4 +19,7 @@ export class AppointmentProxyService {
       .set('from', moment(from).format()).set('to', moment(to).format());
     return this.appointmentService.getAll(params);
   }
+  reserve(id: number, username: string): Observable<Appointment> {
+    return this.appointmentService.reserve(id, username);
+  }
 }
