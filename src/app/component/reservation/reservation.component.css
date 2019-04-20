@@ -16,7 +16,9 @@
   width: 80%;
   padding-left: 10%;
 }
-
+.calendar mat-form-field {
+  margin: 10px;
+}
 #od{
   width: 42%;
 

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule,
+  MatButtonModule, MatCardModule, MatCheckboxModule, MatDatepickerModule, MatDialogModule,
   MatIconModule,
   MatInputModule,
-  MatListModule, MatSelectModule,
+  MatListModule, MatNativeDateModule, MatSelectModule,
   MatSidenavModule,
   MatToolbarModule,
   MatTooltipModule
@@ -23,7 +23,9 @@ import {
     MatCardModule,
     MatDialogModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatButtonModule,
@@ -36,7 +38,9 @@ import {
     MatCardModule,
     MatDialogModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   declarations: []
 })

@@ -208,3 +208,8 @@ th{
   background: #15375A;
   color: #ffffff;
 }
+
+button[disabled] {
+  background-color: lightgrey;
+  cursor: default;
+}

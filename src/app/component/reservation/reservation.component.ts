@@ -14,12 +14,15 @@ import { AuthService } from '../../auth/auth.service';
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent implements OnInit {
-// todo make group by day change html
+
   services: Service[];
   doctors: Doctor[];
   appointments: Appointment[];
   reservationForm: FormGroup;
   utils = utils;
+  fromMinDate = new Date();
+  toMinDate = new Date();
+
   constructor(private serviceProxyService: ServiceProxyService, private appointmentProxyService: AppointmentProxyService,
               private builder: FormBuilder, private authService: AuthService) {
     this.reservationForm = builder.group({
@@ -41,6 +44,7 @@ export class ReservationComponent implements OnInit {
       this.appointments = data;
     });
   }
+
   reserve(id: number) {
     this.appointmentProxyService.reserve(id, this.authService.getUsername()).subscribe(() => this.findReservations());
   }
