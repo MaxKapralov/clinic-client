@@ -6,7 +6,6 @@ export interface NewUser extends Entity {
   email: String;
   phoneNumber: String;
   flatNumber: String;
-  streetNumber: String;
   street: String;
   city: String;
   zipCode: String;

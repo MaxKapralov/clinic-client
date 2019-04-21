@@ -2,39 +2,47 @@
 
     <h1>Dane Personalne</h1>
 
-<div class="tabelka">
-  <table>
+<div class="tabelka" *ngIf="userDetails">
+  <table [formGroup]="userDetailsForm">
     <tr>
       <th>Imię</th>
-      <td>Bill</td>
+      <td><input formControlName="name"></td>
     </tr>
     <tr>
       <th>Nazwisko</th>
-      <td>Gates</td>
+      <td><input formControlName="surname"></td>
     </tr>
     <tr>
       <th>E-mail</th>
-      <td>Bill.Gates@mail.com</td>
+      <td><input formControlName="email"></td>
     </tr>
     <tr>
       <th>Nr telefonu</th>
-      <td>123456789</td>
+      <td><input formControlName="phoneNumber"></td>
     </tr>
     <tr>
-      <th>Adres zamieszkania</th>
-      <td>Nazwa Ulicy, 69<br>
-          indeks, miasto<br>
-          kraj
-      </td>
+      <th>Miasto</th>
+      <td><input formControlName="city"></td>
+    </tr>
+    <tr>
+      <th>Ulica</th>
+      <td><input formControlName="street"></td>
+    </tr>
+    <tr>
+      <th>Mieszkanie</th>
+      <td><input formControlName="flatNumber"></td>
+    </tr>
+    <tr>
+      <th>Kod pocztowy</th>
+      <td><input formControlName="zipCode"></td>
     </tr>
   </table>
 </div>
 
 
 <div class="buttons">
-    <button type="edit" class="selectbtn">Edytuj</button>
-    <button type="submit" class="selectbtn">Potwierdź</button>
-
+    <button class="selectbtn" [disabled]="!disableFields" (click)="editDetails()">Edytuj</button>
+    <button type="submit" class="selectbtn" [disabled]="disableFields" (click)="updateDetails()">Potwierdź</button>
 </div>
 
 

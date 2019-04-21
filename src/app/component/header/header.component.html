@@ -35,9 +35,10 @@
 
     <nav id="topnav">
       <ul class="menu">
-        <li><a routerLink="/reservation">Zarezerwuj wizytę</a></li>
-        <li><a routerLink="/">Logowanie</a></li>
-        <li><a routerLink="/registration">Rejestracja</a></li>
+        <li *ngIf="authService.isAuthenticated()"><a routerLink="/personal-data">Dane Osobowe</a> </li>
+        <li *ngIf="authService.isAuthenticated()"><a routerLink="/reservation">Zarezerwuj wizytę</a></li>
+        <li *ngIf="!authService.isAuthenticated()"><a routerLink="/">Logowanie</a></li>
+        <li *ngIf="!authService.isAuthenticated()"><a routerLink="/registration">Rejestracja</a></li>
       </ul>
     </nav>
 
