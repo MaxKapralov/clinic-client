@@ -13,21 +13,24 @@
     </div>
 
     <div class="calendar">
-      <label for="od">od </label>
-      <input type="date" id="od" formControlName="from">
-
-      <label for="do"> do </label>
-      <input type="date" id="do" formControlName="to">
-      <button type="submit" class="selectbtn" (click)="findReservations()">Wybierz</button>
-
+      <mat-form-field>
+        <input matInput [matDatepicker]="pickerFrom" placeholder="Wybierz date" formControlName="from" [min]="fromMinDate">
+        <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #pickerFrom></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="pickerTo" placeholder="Wybierz date" formControlName="to" [min]="toMinDate">
+        <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #pickerTo></mat-datepicker>
+      </mat-form-field>
+       <button type="submit" class="selectbtn" (click)="findReservations()" [disabled]="reservationForm.invalid">Wybierz</button>
     </div>
   </div>
 
   <div class="lekarzitermin" *ngFor="let appointment of appointments">
 
     <div class="zdjecie">
-      <a href="#">
-        <img id="doctorimage" src="../../../assets/image/blue-01.png"></a>
+      {{appointment.doctorName}}
     </div>
 
 
