@@ -32,7 +32,11 @@ export class AuthService {
       tap((response: HttpResponse<null>) => {
         const token = response.headers.get(AUTH_TOKEN_HEADER);
         this.tokenStorageService.setToken(token.replace(AUTH_TOKEN_PREFIX, ''));
-        this.router.navigate(['main']);
+        if (this.isAuthorize(Roles.USER)) {
+          this.router.navigate(['personal-data']);
+        } else if (this.isAuthorize(Roles.ADMIN)) {
+          this.router.navigate(['calendar']);
+        }
       }),
       map(response => response.ok),
       catchError(err => {
@@ -72,6 +76,6 @@ export class AuthService {
   }
   logout() {
     this.tokenStorageService.deleteToken();
-    this.router.navigate(['/']);
+    this.router.navigate(['login']);
   }
 }
