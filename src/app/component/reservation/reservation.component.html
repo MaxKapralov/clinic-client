@@ -14,7 +14,8 @@
 
     <div class="calendar">
       <mat-form-field>
-        <input matInput [matDatepicker]="pickerFrom" placeholder="Wybierz date" formControlName="from" [min]="fromMinDate">
+        <input matInput [matDatepicker]="pickerFrom" placeholder="Wybierz date" formControlName="from"
+               [min]="fromMinDate">
         <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
         <mat-datepicker touchUi #pickerFrom></mat-datepicker>
       </mat-form-field>
@@ -23,26 +24,28 @@
         <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
         <mat-datepicker touchUi #pickerTo></mat-datepicker>
       </mat-form-field>
-       <button type="submit" class="selectbtn" (click)="findReservations()" [disabled]="reservationForm.invalid">Wybierz</button>
+      <button type="submit" class="selectbtn" (click)="findReservations()" [disabled]="reservationForm.invalid">
+        Wybierz
+      </button>
     </div>
   </div>
+  <table *ngIf="appointments">
+    <colgroup span="5"></colgroup>
+    <tr id="naglowek">
+      <th>Nazwa usługi</th>
+      <th>Data realizacji</th>
+      <th>Godzina</th>
+      <th>Lekarz</th>
+      <th>Operacje</th>
+    </tr>
 
-  <div class="lekarzitermin" *ngFor="let appointment of appointments">
+    <tr id="wartosci" *ngFor="let appointment of appointments">
+      <td>{{appointment.service.name}}</td>
+      <td>{{utils.translateDayToPolish(utils.getDayFromDate(appointment.term)) + " " + utils.formatDate(appointment.term)}}</td>
+      <td>{{utils.getTime(appointment.term)}}</td>
+      <td>{{appointment.doctor.name + " " + appointment.doctor.surname}}</td>
+      <td><button [disabled]="!appointment.free" class="selectbtn" (click)="reserve(appointment)">Zarezerwuj</button></td>
+    </tr>
 
-    <div class="zdjecie">
-      {{appointment.doctorName}}
-    </div>
-
-
-    <div class="czas" *ngFor="let key of utils.getKeys(appointment.appointments)">
-      <p>{{utils.translateDayToPolish(utils.getDayFromDate(key))}}</p>
-      <p>{{key}}</p>
-      <table>
-        <tr>
-          <td *ngFor="let t of appointment.appointments[key]">
-            <button (click)="reserve(t.id)" [disabled]="!t.free" class="term" >{{utils.getTime(t.term)}}</button>
-          </td>
-      </table>
-    </div>
-  </div>
+  </table>
 </div>
