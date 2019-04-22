@@ -11,7 +11,7 @@ export class AuthInterceptorService implements HttpInterceptor {
 
   constructor(private tokenStorageService: TokenStorageService) { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (request.url === `${environment.apiUrl}/login`) {
+    if (request.url === `${environment.apiUrl}/login` || request.url === `${environment.apiUrl}/sign-up`) {
       return next.handle(request);
     }
     request = request.clone({
