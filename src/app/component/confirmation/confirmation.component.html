@@ -1,39 +1,27 @@
-<div class="container">
-
-  <h1>Potwierdź rejestrację</h1>
-
-
-  <div class="tabelka">
+<h1 mat-dialog-title>Potwierdź rejestrację</h1>
+<mat-dialog-content align="center">
+  <div>
     <table>
       <tr>
-        <th>Imię</th>
-        <td>Bill</td>
-      </tr>
-      <tr>
-        <th>Nazwisko</th>
-        <td>Gates</td>
-      </tr>
-      <tr>
         <th>Usługa</th>
-        <td>EKG</td>
+        <td>{{data.service.name}}</td>
       </tr>
       <tr>
         <th>Lekarz</th>
-        <td>Piotr</td>
+        <td>{{data.doctor.name + " " + data.doctor.surname}}</td>
       </tr>
       <tr>
         <th>Termin</th>
-        <td>22/11/2019</td>
+        <td>{{utils.formatDate(data.term)}}</td>
+      </tr>
+      <tr>
+        <th>Godzina</th>
+        <td>{{utils.getTime(data.term)}}</td>
       </tr>
     </table>
   </div>
-
-
-  <div class="buttons">
-    <button type="submit" class="selectbtn">Potwierdź</button>
-
-  </div>
-
-
-
-</div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button type="submit" class="selectbtn" (click)="acceptReservation()">Potwierdź</button>
+  <button type="submit" class="selectbtn" mat-dialog-close>Anuluj</button>
+</mat-dialog-actions>

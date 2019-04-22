@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Appointment } from '../model/appointment';
 import { EntityService } from './entity.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -15,6 +15,14 @@ export class AppointmentService extends EntityService<Appointment> {
   }
   reserve(id: number, username: string): Observable<any> {
     return this.http.put(`${this.url}/${id}`, username).pipe(
+      catchError(error => {
+        return EMPTY;
+      })
+    );
+  }
+  getHistory(username: string): Observable<Appointment[]> {
+    const params = new HttpParams().set('username', username);
+    return this.http.get<Appointment[]>(`${this.url}/history`, {params: params}).pipe(
       catchError(error => {
         return EMPTY;
       })

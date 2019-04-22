@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { Appointment } from '../../model/appointment';
+import * as utils from '../../Utils';
 @Component({
   selector: 'app-confirmation',
   templateUrl: './confirmation.component.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmationComponent implements OnInit {
 
-  constructor() { }
+  utils = utils;
+  constructor(@Inject(MAT_DIALOG_DATA) private data: Appointment, private dialogRef: MatDialogRef<ConfirmationComponent>) { }
 
   ngOnInit() {
+  }
+
+  acceptReservation() {
+    this.dialogRef.close(true);
   }
 
 }

@@ -4,11 +4,12 @@ import {
   MatButtonModule, MatCardModule, MatCheckboxModule, MatDatepickerModule, MatDialogModule,
   MatIconModule,
   MatInputModule,
-  MatListModule, MatNativeDateModule, MatSelectModule,
-  MatSidenavModule,
+  MatListModule, MatNativeDateModule, MatPaginatorModule, MatSelectModule,
+  MatSidenavModule, MatTableModule,
   MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
+import { ConfirmationComponent } from '../../component/confirmation/confirmation.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,9 @@ import {
     MatSelectModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   exports: [
     MatButtonModule,
@@ -40,8 +43,13 @@ import {
     MatSelectModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
-  declarations: []
+  declarations: [],
+  entryComponents: [
+    ConfirmationComponent
+  ]
 })
 export class MaterialModule { }

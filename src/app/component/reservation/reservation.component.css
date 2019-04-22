@@ -33,28 +33,6 @@
   padding-bottom: 50px;
 }
 
-
-.zdjecie
-{
-  padding-left: 20px;
-  padding-top: 10px;
-  height: 60%;
-  width: 40%;
-  float: left;
-}
-
-#doctorimage
-{
-  width: 80%;
-  padding: 0;
-  margin: 0;
-}
-
-.table, td, td{
-  border: 1px solid black;
-  padding-top: 1px;
-}
-
 .czas p
 {
   font-weight: bold;
@@ -68,20 +46,24 @@
   margin-top: 8px;
 
 }
-.term {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
+
+table {
+  margin-left: auto;
+  margin-right: auto;
 }
-.term:hover {
-  background-color: rgba(43,39,44,0.1);
-  cursor: pointer;
+table, th{
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-collapse: collapse;
+
+  align-self: center;
 }
-.term[disabled] {
-  background-color: rgba(43,39,44,0.1);
-  cursor: default;
+
+th{
+  padding: 25px 70px;
+}
+
+td{
+  text-align: center;
+  padding: 25px;
 }

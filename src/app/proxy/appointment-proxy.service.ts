@@ -22,4 +22,7 @@ export class AppointmentProxyService {
   reserve(id: number, username: string): Observable<Appointment> {
     return this.appointmentService.reserve(id, username);
   }
+  getHistory(username: string): Observable<Appointment[]> {
+    return this.appointmentService.getHistory(username);
+  }
 }
