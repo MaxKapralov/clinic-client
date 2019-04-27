@@ -28,4 +28,11 @@ export class AppointmentService extends EntityService<Appointment> {
       })
     );
   }
+  getHistoryForPatient(id: number): Observable<Appointment[]> {
+    return this.http.get<Appointment[]>(`${this.url}/history/${id}`).pipe(
+      catchError(error => {
+        return EMPTY;
+      })
+    );
+  }
 }

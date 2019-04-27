@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Dodaj nowego lekarza</h1>
+<mat-dialog-content align="center">
+  <div>
+    <table [formGroup]="doctorForm">
+      <tr>
+        <th>Imię</th>
+        <td><input formControlName="name"></td>
+      </tr>
+      <tr>
+        <th>Nazwisko</th>
+        <td><input formControlName="surname"></td>
+      </tr>
+    </table>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button type="submit" class="selectbtn" (click)="addDoctor()" [disabled]="doctorForm.invalid">Potwierdź</button>
+  <button type="submit" class="selectbtn" mat-dialog-close>Anuluj</button>
+</mat-dialog-actions>

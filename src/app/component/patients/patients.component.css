@@ -1,5 +1,4 @@
-.container
-{
+.container {
   padding: 5px;
   margin: 75px;
   width: 90%;
@@ -11,23 +10,24 @@
 
 }
 
-
-table, th{
+table, th {
   border-bottom: 1px solid black;
   border-top: 1px solid black;
   border-collapse: collapse;
   margin: 40px;
   margin-left: 70px;
   align-self: center;
-
-
 }
 
-th{
+th {
   padding: 25px 70px;
 }
 
-td{
+td {
   text-align: center;
   padding: 25px;
+}
+
+tr {
+  border-bottom: 1px solid black;
 }
