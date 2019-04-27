@@ -10,6 +10,8 @@ import {
   MatTooltipModule
 } from '@angular/material';
 import { ConfirmationComponent } from '../../component/confirmation/confirmation.component';
+import { NewServiceComponent } from '../../component/manage/new-service/new-service.component';
+import { NewDoctorComponent } from '../../component/manage/new-doctor/new-doctor.component';
 
 @NgModule({
   imports: [
@@ -49,7 +51,9 @@ import { ConfirmationComponent } from '../../component/confirmation/confirmation
   ],
   declarations: [],
   entryComponents: [
-    ConfirmationComponent
+    ConfirmationComponent,
+    NewServiceComponent,
+    NewDoctorComponent
   ]
 })
 export class MaterialModule { }

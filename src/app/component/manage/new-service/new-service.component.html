@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Dodaj nową usługę</h1>
+<mat-dialog-content align="center">
+  <div>
+    <table>
+      <tr [formGroup]="serviceForm">
+        <th>Nazwa usługi</th>
+        <td><input formControlName="name"></td>
+      </tr>
+    </table>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button type="submit" class="selectbtn" (click)="addService()" [disabled]="serviceForm.invalid">Potwierdź</button>
+  <button type="submit" class="selectbtn" mat-dialog-close>Anuluj</button>
+</mat-dialog-actions>

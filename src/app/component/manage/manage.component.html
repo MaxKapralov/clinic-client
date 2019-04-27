@@ -1,0 +1,58 @@
+<div class="tab">
+  <button class="tablinks" (click)="changeTab($event, 'doctors', 'services')" id="servBut">Usługi</button>
+  <button class="tablinks" (click)="changeTab($event, 'services', 'doctors')" id="doctBut">Lekarze</button>
+</div>
+<div id="doctors" class="tabcontent">
+  <div class="services-container">
+    <table>
+      <colgroup span="5"></colgroup>
+      <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Operacje</th>
+      </tr>
+
+      <tr *ngFor="let doctor of doctors">
+        <td>{{doctor.name}}</td>
+        <td>{{doctor.surname}}</td>
+        <td>
+          <button class="selectbtn" (click)="deleteDoctor(doctor.id)">Usuń</button>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>
+          <button class="selectbtn" (click)="addNewDoctor()">Dodaj lekarza</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div id="services" class="tabcontent">
+  <div class="services-container">
+    <table>
+      <tr id="naglowek">
+        <th>Nazwa Usługi</th>
+        <th>Operacje</th>
+      </tr>
+      <tr *ngFor="let service of services">
+        <td>{{service.name}}</td>
+        <td>
+          <button class="selectbtn" (click)="deleteService(service.id)">Usuń</button>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button class="selectbtn" (click)="addNewService()">Dodaj nową usługę</button>
+        </td>
+      </tr>
+
+    </table>
+
+
+  </div>
+
+</div>

@@ -12,4 +12,10 @@ export class ServiceProxyService {
   getAllServices(): Observable<Service[]> {
     return this.servicesService.getAll();
   }
+  deleteService(id: number): Observable<Service> {
+    return this.servicesService.delete(id);
+  }
+  addService(service: Service): Observable<Service> {
+    return this.servicesService.add(service);
+  }
 }

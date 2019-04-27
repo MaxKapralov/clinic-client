@@ -5,17 +5,17 @@
     <tr id="naglowek">
       <th>Imię</th>
       <th>Nazwisko</th>
-      <th>Data urodzenia</th>
       <th>Adres zamieszkania</th>
+      <th>Numer telefonu</th>
       <th>Historia usług</th>
     </tr>
 
-    <tr id="wartosci">
-      <td>Imię</td>
-      <td>Nazwisko</td>
-      <td>Data urodzenia</td>
-      <td>Adres zamieszkania</td>
-      <td>Historia usług</td>
+    <tr *ngFor="let patient of patients">
+      <td>{{patient.name}}</td>
+      <td>{{patient.surname}}</td>
+      <td>{{patient.city + ", ul." + patient.street }}</td>
+      <td>{{patient.phoneNumber}}</td>
+      <td><button class="selectbtn" (click)="goToHistory(patient.id)">Historia usług</button></td>
     </tr>
 
   </table>

@@ -25,4 +25,7 @@ export class AppointmentProxyService {
   getHistory(username: string): Observable<Appointment[]> {
     return this.appointmentService.getHistory(username);
   }
+  getHistoryForPatient(id: number): Observable<Appointment[]> {
+    return this.appointmentService.getHistoryForPatient(id);
+  }
 }
