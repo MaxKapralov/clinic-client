@@ -1,61 +1,41 @@
 <div>
-  <div class="container">
-
+  <div class="container" [formGroup]="calendarForm">
     <div class="row">
       <p>
         Wybierz usługę
       </p>
-      <select id = "usluga">
-        <option>Opcja 1</option>
-        <option>Opcja 2fsgfgsrs</option>
-        <option>Opcja 3</option>
+      <select class="usluga" formControlName="serviceId">
+        <option *ngFor="let service of services" [value]="service.id">{{service.name}}</option>
       </select>
-      <button type="submit" class="selectbtn">Wybierz</button>
     </div>
-
     <div class="calendar">
-      <p>
-        Wybierz termin
-      </p>
-      <input type="date" id="usluga">
-      <button type="submit" class="selectbtn">Wybierz</button>
+      <mat-form-field>
+        <input matInput [matDatepicker]="pickerFrom" placeholder="Wybierz date" formControlName="date"
+               [min]="minDate">
+        <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #pickerFrom></mat-datepicker>
+      </mat-form-field>
     </div>
+    <button type="submit" class="selectbtn" [disabled]="calendarForm.controls['serviceId'].invalid && calendarForm.controls['date'].invalid" (click)="findAppointments()">Wybierz</button>
+  </div>
+  <table *ngIf="appointments">
+    <colgroup span="5"></colgroup>
+    <tr id="naglowek">
+      <th>Data</th>
+      <th>Godzina</th>
+      <th>Usługa</th>
+      <th>Lekarz</th>
+      <th>Pacjent</th>
+    </tr>
 
-</div>
+    <tr id="wartosci" *ngFor="let appointment of appointments">
+      <td>{{utils.translateDayToPolish(utils.getDayFromDate(appointment.term)) + " " + utils.formatDate(appointment.term)}}</td>
+      <td>{{utils.getTime(appointment.term)}}</td>
+      <td>{{appointment.service.name}}</td>
+      <td>{{appointment.doctor.name + " " + appointment.doctor.surname}}</td>
+      <td>{{appointment.patient.name + " " + appointment.patient.surname}}</td>
+    </tr>
 
-  <div class="lekarzitermin">
-
-    <h2>Lekarz</h2>
-    <p>Poniedziałek<br>
-
-    22.02.2019</p>
-    <table class="timetable">
-      <td>
-        <tr>06:30</tr>
-        <tr>07:00</tr>
-        <tr>07:30</tr>
-        <tr>08:00</tr>
-        <tr>06:30</tr>
-        <tr>07:00</tr>
-        <tr>07:30</tr>
-        <tr>08:00</tr>
-      </td>
-
-      <td>
-        <tr>pacjent</tr>
-        <tr>pacjent</tr>
-        <tr>pacjent</tr>
-        <tr>pacjent</tr>
-        <tr>pacjent</tr>
-        <tr>pacjent</tr>
-        <tr>pacjent</tr>
-        <tr>pacjent</tr>
-
-      </td>
-
-    </table>
-
-   </div>
-
+  </table>
 </div>
 

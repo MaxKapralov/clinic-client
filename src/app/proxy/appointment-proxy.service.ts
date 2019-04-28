@@ -28,4 +28,14 @@ export class AppointmentProxyService {
   getHistoryForPatient(id: number): Observable<Appointment[]> {
     return this.appointmentService.getHistoryForPatient(id);
   }
+  getAppointmentsForServiceAndDate(id: string, date: Date): Observable<Appointment[]> {
+    let params = new HttpParams({ encoder: this.customEncoderService });
+    if (id) {
+      params = params.set('serviceId', id);
+    }
+    if (date) {
+      params = params.set('date', moment(date).format());
+    }
+    return this.appointmentService.getAppointmentsForServiceAndDate(params);
+  }
 }
