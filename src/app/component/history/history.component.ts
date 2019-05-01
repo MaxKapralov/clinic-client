@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Appointment } from '../../model/appointment';
 import { AppointmentProxyService } from '../../proxy/appointment-proxy.service';
 import { AuthService } from '../../auth/auth.service';
-import * as utils from '../../Utils';
 import { ActivatedRoute } from '@angular/router';
+import { CellData, CellType } from '../table/table.component';
+
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
@@ -11,9 +12,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HistoryComponent implements OnInit {
 
+  headers = ['Nazwa Usługi', 'Data Realizacji', 'Godzina', 'Lekarz'];
+  cellData: CellData[] = [{
+    path: 'service.name',
+    type: CellType.STRING
+  }, {
+    path: 'term',
+    type: CellType.DAY
+  }, {
+    path: 'term',
+    type: CellType.TIME
+  }, {
+    path: 'doctor',
+    type: CellType.USER
+  }];
   history: Appointment[];
-  utils = utils;
-  constructor(private appointmentProxy: AppointmentProxyService, private authService: AuthService, private route: ActivatedRoute) { }
+
+  constructor(private appointmentProxy: AppointmentProxyService, private authService: AuthService, private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');

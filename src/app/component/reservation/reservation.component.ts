@@ -1,14 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServiceProxyService } from '../../proxy/service-proxy.service';
 import { Service } from '../../model/service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Doctor } from '../../model/doctor';
 import { Appointment } from '../../model/appointment';
 import { AppointmentProxyService } from '../../proxy/appointment-proxy.service';
-import * as utils from '../../Utils';
 import { AuthService } from '../../auth/auth.service';
-import { MatDialog, MatPaginator } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { ConfirmationComponent } from '../confirmation/confirmation.component';
+import { CellData, CellType } from '../table/table.component';
 
 @Component({
   selector: 'app-reservation',
@@ -21,10 +21,26 @@ export class ReservationComponent implements OnInit {
   doctors: Doctor[];
   appointments: Appointment[];
   reservationForm: FormGroup;
-  utils = utils;
   fromMinDate = new Date();
   toMinDate = new Date();
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  headers: string[] = ['Nazwa usługi', 'Data realizacji', 'Godzina', 'Lekarz', 'Operacje'];
+  cellData: CellData[] = [{
+    path: 'service.name',
+    type: CellType.STRING
+  }, {
+    path: 'term',
+    type: CellType.DAY
+  }, {
+    path: 'term',
+    type: CellType.TIME,
+  }, {
+    path: 'doctor',
+    type: CellType.USER
+  }, {
+    type: CellType.BUTTON,
+    buttonLabel: 'Zarezerwuj',
+    disabled: (a) => !a.free
+  }];
 
   constructor(private serviceProxyService: ServiceProxyService, private appointmentProxyService: AppointmentProxyService,
               private builder: FormBuilder, private authService: AuthService, private dialog: MatDialog) {

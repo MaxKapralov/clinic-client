@@ -29,23 +29,5 @@
       </button>
     </div>
   </div>
-  <table *ngIf="appointments">
-    <colgroup span="5"></colgroup>
-    <tr id="naglowek">
-      <th>Nazwa usługi</th>
-      <th>Data realizacji</th>
-      <th>Godzina</th>
-      <th>Lekarz</th>
-      <th>Operacje</th>
-    </tr>
-
-    <tr id="wartosci" *ngFor="let appointment of appointments">
-      <td>{{appointment.service.name}}</td>
-      <td>{{utils.translateDayToPolish(utils.getDayFromDate(appointment.term)) + " " + utils.formatDate(appointment.term)}}</td>
-      <td>{{utils.getTime(appointment.term)}}</td>
-      <td>{{appointment.doctor.name + " " + appointment.doctor.surname}}</td>
-      <td><button [disabled]="!appointment.free" class="selectbtn" (click)="reserve(appointment)">Zarezerwuj</button></td>
-    </tr>
-
-  </table>
+  <app-table [data]="appointments" (operationClick)="reserve($event)" [headers]="headers" [cellData]="cellData"></app-table>
 </div>
