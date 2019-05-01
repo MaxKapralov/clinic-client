@@ -1,3 +1,29 @@
-<p>
-  doctors works!
-</p>
+<div class="table-container">
+  <div class="controls-container" [formGroup]="doctorForm">
+    <span>Wybierz lekarza:</span>
+    <select formControlName="doctor" (change)="doctorChanged($event.target.value)">
+      <option *ngFor="let doctor of doctors" [value]="doctor.id">{{doctor.name + " " + doctor.surname}}</option>
+    </select>
+    <span>Wybierz usługę</span>
+    <select formControlName="service">
+      <option *ngFor="let service of services" [value]="service.id">{{service.name}}</option>
+    </select>
+  </div>
+  <table *ngIf="appointments">
+    <tr>
+      <th>Dzień Tygodnia</th>
+      <th>Godzina</th>
+      <th>Data</th>
+      <th>Operacje</th>
+    </tr>
+    <tr *ngFor="let app of appointments">
+      <td>{{utils.translateDayToPolish(utils.getDayFromDate(app.term))}}</td>
+      <td>{{utils.getTime(app.term)}}</td>
+      <td>{{utils.formatDate(app.term)}}</td>
+      <td>
+        <button [disabled]="!app.free || !doctorForm.controls['service'].value" class="selectbtn" (click)="add(app)">Dodaj</button>
+      </td>
+    </tr>
+  </table>
+</div>
+

@@ -7,7 +7,7 @@ import { AppComponent } from './component/app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './module/material/material.module';
 import { AppRouterModule } from './module/router/app-router.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { environment } from './environment';
