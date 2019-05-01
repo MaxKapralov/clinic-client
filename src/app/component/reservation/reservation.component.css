@@ -5,65 +5,43 @@
   margin-left: 30%;
 }
 
-#usluga
-{
+#usluga {
   width: 100%
 }
 
-.calendar{
+.calendar {
   padding-top: 20px;
   margin-top: 0;
   width: 80%;
   padding-left: 10%;
 }
+
 .calendar mat-form-field {
   margin: 10px;
 }
-#od{
+
+#od {
   width: 42%;
 
 }
-#do{
+
+#do {
   width: 42%;
 }
 
-.container
-{
+.container {
   height: max-content;
   padding-bottom: 50px;
 }
 
-.czas p
-{
+.czas p {
   font-weight: bold;
   margin-bottom: 5px;
   margin-top: 5px;
 }
 
-.czas
-{
+.czas {
   float: left;
   margin-top: 8px;
 
-}
-
-table {
-  margin-left: auto;
-  margin-right: auto;
-}
-table, th{
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
-  border-collapse: collapse;
-
-  align-self: center;
-}
-
-th{
-  padding: 25px 70px;
-}
-
-td{
-  text-align: center;
-  padding: 25px;
 }

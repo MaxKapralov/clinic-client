@@ -40,27 +40,3 @@
 .timetable{
   padding-left: 50px;
 }
-table {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-}
-
-table, th{
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
-  border-collapse: collapse;
-  align-self: center;
-}
-
-th{
-  padding: 25px 70px;
-}
-
-td{
-  text-align: center;
-  padding: 25px;
-}
-tr {
-  border-bottom: 1px solid black;
-}
