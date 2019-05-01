@@ -7,6 +7,7 @@ import { DoctorProxyService } from '../../proxy/doctor-proxy.service';
 import { Doctor } from '../../model/doctor';
 import { forkJoin } from 'rxjs';
 import { NewDoctorComponent } from './new-doctor/new-doctor.component';
+import { CellData, CellType } from '../table/table.component';
 
 @Component({
   selector: 'app-manage',
@@ -17,7 +18,25 @@ export class ManageComponent implements OnInit {
 
   services: Service[];
   doctors: Doctor[];
-
+  servicesHeaders: string[] = ['Nazwa Usługi', 'Operacje'];
+  servicesCellData: CellData[] = [{
+    path: 'name',
+    type: CellType.STRING
+  }, {
+    type: CellType.BUTTON,
+    buttonLabel: 'Usuń Usługę'
+  }];
+  doctorsHeaders: string[] = ['Imię', 'Nazwisko', 'Operacje'];
+  doctorsCellData: CellData[] = [{
+    path: 'name',
+    type: CellType.STRING
+  }, {
+    path: 'surname',
+    type: CellType.STRING
+  }, {
+    type: CellType.BUTTON,
+    buttonLabel: 'Usuń Lekarza'
+  }];
   constructor(private servicesProxy: ServiceProxyService, private dialog: MatDialog, private doctorProxy: DoctorProxyService) {
   }
 
@@ -47,8 +66,8 @@ export class ManageComponent implements OnInit {
     evt.currentTarget.className += ' active';
   }
 
-  deleteService(id: number) {
-    this.servicesProxy.deleteService(id).subscribe(() => this.loadEntities());
+  deleteService(service: Service) {
+    this.servicesProxy.deleteService(service.id).subscribe(() => this.loadEntities());
   }
 
   addNewService() {
@@ -57,8 +76,8 @@ export class ManageComponent implements OnInit {
     });
   }
 
-  deleteDoctor(id: number) {
-    this.doctorProxy.deleteDoctor(id).subscribe(() => this.loadEntities());
+  deleteDoctor(doctor: Doctor) {
+    this.doctorProxy.deleteDoctor(doctor.id).subscribe(() => this.loadEntities());
   }
 
   addNewDoctor() {

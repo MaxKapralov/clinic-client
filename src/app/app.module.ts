@@ -7,7 +7,7 @@ import { AppComponent } from './component/app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './module/material/material.module';
 import { AppRouterModule } from './module/router/app-router.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { environment } from './environment';
@@ -29,6 +29,7 @@ import { ConfirmationComponent } from './component/confirmation/confirmation.com
 import { ManageComponent } from './component/manage/manage.component';
 import { NewServiceComponent } from './component/manage/new-service/new-service.component';
 import { NewDoctorComponent } from './component/manage/new-doctor/new-doctor.component';
+import { TableComponent } from './component/table/table.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { NewDoctorComponent } from './component/manage/new-doctor/new-doctor.com
     ManageComponent,
     NewServiceComponent,
     NewDoctorComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

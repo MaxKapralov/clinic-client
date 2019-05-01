@@ -18,24 +18,6 @@
     </div>
     <button type="submit" class="selectbtn" [disabled]="calendarForm.controls['serviceId'].invalid && calendarForm.controls['date'].invalid" (click)="findAppointments()">Wybierz</button>
   </div>
-  <table *ngIf="appointments">
-    <colgroup span="5"></colgroup>
-    <tr id="naglowek">
-      <th>Data</th>
-      <th>Godzina</th>
-      <th>Usługa</th>
-      <th>Lekarz</th>
-      <th>Pacjent</th>
-    </tr>
-
-    <tr id="wartosci" *ngFor="let appointment of appointments">
-      <td>{{utils.translateDayToPolish(utils.getDayFromDate(appointment.term)) + " " + utils.formatDate(appointment.term)}}</td>
-      <td>{{utils.getTime(appointment.term)}}</td>
-      <td>{{appointment.service.name}}</td>
-      <td>{{appointment.doctor.name + " " + appointment.doctor.surname}}</td>
-      <td>{{appointment.patient.name + " " + appointment.patient.surname}}</td>
-    </tr>
-
-  </table>
+  <app-table [data]="appointments" [headers]="headers" [cellData]="cellData"></app-table>
 </div>
 

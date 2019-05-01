@@ -1,23 +1,2 @@
-<div class="container" >
-
-  <p *ngIf="!history">Nie masz rzadnych wizyt</p>
-  <table *ngIf="history">
-    <colgroup span="5"></colgroup>
-    <tr id="naglowek">
-      <th>Nazwa usługi</th>
-      <th>Data realizacji</th>
-      <th>Godzina</th>
-      <th>Lekarz</th>
-    </tr>
-
-    <tr id="wartosci" *ngFor="let h of history">
-      <td>{{h.service.name}}</td>
-      <td>{{utils.translateDayToPolish(utils.getDayFromDate(h.term)) + " " + utils.formatDate(h.term)}}</td>
-      <td>{{utils.getTime(h.term)}}</td>
-      <td>{{h.doctor.name + " " + h.doctor.surname}}</td>
-    </tr>
-
-  </table>
-
-
-</div>
+<p *ngIf="!history">Nie masz rzadnych wizyt</p>
+<app-table [data]="history" [headers]="headers" [cellData]="cellData"></app-table>
