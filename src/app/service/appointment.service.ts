@@ -42,4 +42,11 @@ export class AppointmentService extends EntityService<Appointment> {
       })
     );
   }
+  getForWeek(params: HttpParams): Observable<Appointment[]> {
+    return this.http.get<Appointment[]>(`${this.url}/new-week`, {params: params}).pipe(
+      catchError(error => {
+        return EMPTY;
+      })
+    );
+  }
 }

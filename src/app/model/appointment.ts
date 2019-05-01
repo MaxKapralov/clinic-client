@@ -6,7 +6,7 @@ import { Service } from './service';
 export interface Appointment extends Entity {
   patient: UserDetails;
   doctor: Doctor;
-  Service: Service;
+  service: Service;
   term: Date;
   free: boolean;
 }
