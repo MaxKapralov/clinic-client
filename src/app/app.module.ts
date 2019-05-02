@@ -25,8 +25,11 @@ import { HistoryComponent } from './component/history/history.component';
 import { CalendarComponent } from './component/calendar/calendar.component';
 import { PatientsComponent } from './component/patients/patients.component';
 import { DoctorsComponent } from './component/doctors/doctors.component';
-import { ServicesComponent } from './component/services/services.component';
 import { ConfirmationComponent } from './component/confirmation/confirmation.component';
+import { ManageComponent } from './component/manage/manage.component';
+import { NewServiceComponent } from './component/manage/new-service/new-service.component';
+import { NewDoctorComponent } from './component/manage/new-doctor/new-doctor.component';
+import { TableComponent } from './component/table/table.component';
 
 @NgModule({
   declarations: [
@@ -43,8 +46,11 @@ import { ConfirmationComponent } from './component/confirmation/confirmation.com
     CalendarComponent,
     PatientsComponent,
     DoctorsComponent,
-    ServicesComponent,
     ConfirmationComponent,
+    ManageComponent,
+    NewServiceComponent,
+    NewDoctorComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

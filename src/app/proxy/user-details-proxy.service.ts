@@ -18,4 +18,7 @@ export class UserDetailsProxyService {
   updateUserDetails(user: UserDetails): void {
     this.userDetailsService.update(user).subscribe();
   }
+  getAllUsers(): Observable<UserDetails[]> {
+    return this.userDetailsService.getAll();
+  }
 }

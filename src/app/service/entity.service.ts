@@ -24,8 +24,8 @@ export abstract class EntityService<T extends Entity> {
     );
   }
 
-  add(entity: T): Observable<{}> {
-    return this.http.post(this.url, entity, this.httpOptions).pipe(
+  add(entity: T): Observable<T> {
+    return this.http.post<T>(this.url, entity, this.httpOptions).pipe(
       catchError(error => {
         console.log(error);
         return EMPTY;
@@ -51,8 +51,8 @@ export abstract class EntityService<T extends Entity> {
     );
   }
 
-  delete(id: number): Observable<{}> {
-    return this.http.delete(`${this.url}/${id}`).pipe(
+  delete(id: number): Observable<T> {
+    return this.http.delete<T>(`${this.url}/${id}`).pipe(
       catchError(error => {
         console.log(error);
         return EMPTY;

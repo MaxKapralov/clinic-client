@@ -41,7 +41,7 @@
         <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/patients">Użytkownicy przychodni</a> </li>
         <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/calendar">Kalendarz zapisów</a> </li>
         <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/doctors">Terminy przyjęć lekarskich</a> </li>
-        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/services">Usługi</a> </li>
+        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/manage">Zarządzaj</a> </li>
         <li *ngIf="!authService.isAuthenticated()"><a routerLink="/login">Logowanie</a></li>
         <li *ngIf="!authService.isAuthenticated()"><a routerLink="/registration">Rejestracja</a></li>
         <li *ngIf="authService.isAuthenticated()"><a (click)="authService.logout()" style="cursor: pointer">Wyloguj</a></li>

@@ -28,4 +28,25 @@ export class AppointmentService extends EntityService<Appointment> {
       })
     );
   }
+  getHistoryForPatient(id: number): Observable<Appointment[]> {
+    return this.http.get<Appointment[]>(`${this.url}/history/${id}`).pipe(
+      catchError(error => {
+        return EMPTY;
+      })
+    );
+  }
+  getAppointmentsForServiceAndDate(params: HttpParams): Observable<Appointment[]> {
+    return this.http.get<Appointment[]>(`${this.url}/calendar`, {params: params}).pipe(
+      catchError(error => {
+        return EMPTY;
+      })
+    );
+  }
+  getForWeek(params: HttpParams): Observable<Appointment[]> {
+    return this.http.get<Appointment[]>(`${this.url}/new-week`, {params: params}).pipe(
+      catchError(error => {
+        return EMPTY;
+      })
+    );
+  }
 }

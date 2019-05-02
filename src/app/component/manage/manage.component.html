@@ -1,0 +1,16 @@
+<div class="tab">
+  <button class="tablinks" (click)="changeTab($event, 'doctors', 'services')" id="servBut">Usługi</button>
+  <button class="tablinks" (click)="changeTab($event, 'services', 'doctors')" id="doctBut">Lekarze</button>
+</div>
+<div id="doctors" class="tabcontent">
+  <button class="selectbtn" (click)="addNewDoctor()">Dodaj Nowego Lekarza</button>
+  <app-table [data]="doctors" [cellData]="doctorsCellData" [headers]="doctorsHeaders" (operationClick)="deleteDoctor($event)"></app-table>
+</div>
+
+<div id="services" class="tabcontent">
+  <button class="selectbtn" (click)="addNewService()">Dodaj Nową Usługę</button>
+  <div class="services-container">
+    <app-table [data]="services" (operationClick)="deleteService($event)" [headers]="servicesHeaders" [cellData]="servicesCellData"></app-table>
+  </div>
+
+</div>

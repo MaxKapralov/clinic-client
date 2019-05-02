@@ -4,20 +4,71 @@
     <p>Nie posiadasz konta? Zarejestruj się:</p>
 
     <div class=" inputs-grid" [formGroup]="registrationForm">
-      <input type="text" placeholder="Imię" formControlName="name">
-      <!--
-      <span style="color: red" *ngIf="registrationForm.controls['name'].invalid && registrationForm.controls['name'].touched">Error</span>
-      -->
-      <input type="text" placeholder="Nazwisko" formControlName="surname">
-      <input type="text" placeholder="Pesel" formControlName="pesel">
-      <input type="text" placeholder="Nr telefonu (9 cyfr)" formControlName="phoneNumber">
-      <input type="text" placeholder="Nr mieszkania" formControlName="flatNumber">
-      <input type="text" placeholder="Ulica" formControlName="street">
-      <input type="text" placeholder="Miasto" formControlName="city">
-      <input type="text" placeholder="Kod pocztowy" formControlName="zipCode">
-      <input type="text" placeholder="E-mail" formControlName="email">
-      <input type="password" placeholder="Hasło" formControlName="password">
-      <input type="password" placeholder="Potwierdź Hasło" formControlName="confirmPassword">
+      <div class="input-message">
+        <input type="text" placeholder="Imię" formControlName="name">
+        <span class="error red"
+              *ngIf="registrationForm.controls['name'].invalid && registrationForm.controls['name'].touched">Imie jest polem obowiązkowym</span>
+      </div>
+      <div class="input-message">
+        <input type="text" placeholder="Nazwisko" formControlName="surname">
+        <span class="error red"
+              *ngIf="registrationForm.controls['surname'].invalid && registrationForm.controls['surname'].touched">Nazwisko jest polem obowiązkowym</span>
+      </div>
+      <div class="input-message">
+        <input type="text" placeholder="Pesel" formControlName="pesel">
+        <span class="error red"
+              *ngIf="registrationForm.controls['pesel'].hasError('pattern') && registrationForm.controls['pesel'].touched">Pesel powinien zawierać 11 cyfr</span>
+        <span class="error red"
+              *ngIf="registrationForm.controls['pesel'].hasError('required') && registrationForm.controls['pesel'].touched">Pesel jest polem obowiązkowym</span>
+      </div>
+      <div class="input-message">
+        <input type="text" placeholder="Nr telefonu (9 cyfr)" formControlName="phoneNumber">
+        <span class="error red"
+              *ngIf="registrationForm.controls['phoneNumber'].hasError('pattern') && registrationForm.controls['phoneNumber'].touched">Numer telefonu powinien zawierać 9 cyfr</span>
+        <span class="error red"
+              *ngIf="registrationForm.controls['phoneNumber'].hasError('required') && registrationForm.controls['phoneNumber'].touched">Numer telefonu jest polem obowiązkowym</span>
+      </div>
+      <div class="input-message">
+        <input type="text" placeholder="Nr mieszkania" formControlName="flatNumber">
+        <span class="error red"
+              *ngIf="registrationForm.controls['flatNumber'].invalid && registrationForm.controls['flatNumber'].touched">Numer mieszkania jest polem obowiązkowym</span>
+      </div>
+      <div class="input-message">
+        <input type="text" placeholder="Ulica" formControlName="street">
+        <span class="error red"
+              *ngIf="registrationForm.controls['street'].invalid && registrationForm.controls['street'].touched">Ulica jest polem obowiązkowym</span>
+      </div>
+      <div class="input-message">
+        <input type="text" placeholder="Miasto" formControlName="city">
+        <span class="error red"
+              *ngIf="registrationForm.controls['city'].invalid && registrationForm.controls['city'].touched">Miasto jest polem obowiązkowym</span>
+      </div>
+      <div class="input-message">
+        <input type="text" placeholder="Kod pocztowy" formControlName="zipCode">
+        <span class="error red"
+              *ngIf="registrationForm.controls['zipCode'].invalid && registrationForm.controls['zipCode'].touched">Kod pocztowy jest polem obowiązkowym</span>
+      </div>
+      <div class="input-message">
+        <input type="text" placeholder="E-mail" formControlName="email">
+        <span class="error red"
+              *ngIf="registrationForm.controls['email'].hasError('required') && registrationForm.controls['email'].touched">E-mail jest polem obowiązkowym</span>
+        <span class="error red"
+              *ngIf="registrationForm.controls['email'].hasError('email') && registrationForm.controls['email'].touched">Niepoprawny adres email</span>
+      </div>
+      <div class="input-message">
+        <input type="password" placeholder="Hasło" formControlName="password">
+        <span class="error red"
+              *ngIf="registrationForm.controls['password'].hasError('required') && registrationForm.controls['password'].touched">Hasło jest polem obowiązkowym</span>
+        <span class="error red"
+              *ngIf="registrationForm.controls['password'].hasError('pattern') && registrationForm.controls['password'].touched">Hasło powinno zawierać dużą literę, małą literę, cyfrę, znak specjalny i mieć co najmniej 8 znaków</span>
+      </div>
+      <div class="input-message">
+        <input type="password" placeholder="Potwierdź Hasło" formControlName="confirmPassword">
+        <span class="error red"
+              *ngIf="registrationForm.controls['confirmPassword'].hasError('required') && registrationForm.controls['confirmPassword'].touched">Potwierdź hasło jest polem obowiązkowym</span>
+        <span class="error red"
+              *ngIf="registrationForm.controls['confirmPassword'].hasError('matPasswords') && registrationForm.controls['confirmPassword'].touched">Hasła się nie zgadzają</span>
+      </div>
     </div>
     <button type="submit" class="registerbtn" [disabled]="registrationForm.invalid" (click)="register()">Zarejestruj
       się

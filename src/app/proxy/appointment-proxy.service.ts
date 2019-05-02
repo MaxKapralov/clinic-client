@@ -25,4 +25,24 @@ export class AppointmentProxyService {
   getHistory(username: string): Observable<Appointment[]> {
     return this.appointmentService.getHistory(username);
   }
+  getHistoryForPatient(id: number): Observable<Appointment[]> {
+    return this.appointmentService.getHistoryForPatient(id);
+  }
+  getAppointmentsForServiceAndDate(id: string, date: Date): Observable<Appointment[]> {
+    let params = new HttpParams({ encoder: this.customEncoderService });
+    if (id) {
+      params = params.set('serviceId', id);
+    }
+    if (date) {
+      params = params.set('date', moment(date).format());
+    }
+    return this.appointmentService.getAppointmentsForServiceAndDate(params);
+  }
+  getAppointmentsForWeek(monday: string, id: string): Observable<Appointment[]> {
+    const params = new HttpParams({ encoder: this.customEncoderService }).set('date', moment(monday).format()).set('id', id);
+    return this.appointmentService.getForWeek(params);
+  }
+  addAppointment(appointment: Appointment): Observable<Appointment> {
+    return this.appointmentService.add(appointment);
+  }
 }
