@@ -24,7 +24,8 @@ export class ManageComponent implements OnInit {
     type: CellType.STRING
   }, {
     type: CellType.BUTTON,
-    buttonLabel: 'Usuń Usługę'
+    buttonLabel: 'Usuń Usługę',
+    disabled: () => false
   }];
   doctorsHeaders: string[] = ['Imię', 'Nazwisko', 'Operacje'];
   doctorsCellData: CellData[] = [{
@@ -35,7 +36,8 @@ export class ManageComponent implements OnInit {
     type: CellType.STRING
   }, {
     type: CellType.BUTTON,
-    buttonLabel: 'Usuń Lekarza'
+    buttonLabel: 'Usuń Lekarza',
+    disabled: () => false
   }];
   constructor(private servicesProxy: ServiceProxyService, private dialog: MatDialog, private doctorProxy: DoctorProxyService) {
   }

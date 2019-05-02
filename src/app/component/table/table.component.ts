@@ -61,5 +61,4 @@ export class TableComponent implements OnInit {
   }
   buttonClicked(data: any) {
     this.operationClick.emit(data);
-  }
-}
+  }}
