@@ -1,19 +1,13 @@
-<h1 mat-dialog-title>Dodaj nowego lekarza</h1>
-<mat-dialog-content align="center">
-  <div>
-    <table [formGroup]="doctorForm">
-      <tr>
-        <th>Imię</th>
-        <td><input formControlName="name"></td>
-      </tr>
-      <tr>
-        <th>Nazwisko</th>
-        <td><input formControlName="surname"></td>
-      </tr>
-    </table>
+<app-modal [openEvent]="openSubject" [header]="modalHeader" [body]="modalBody" [footer]="modalFooter" #modal modalId="new-doctor"></app-modal>
+<ng-template #modalHeader>
+  <h2>Dodaj Nowego Lekarza</h2>
+</ng-template>
+<ng-template #modalBody>
+  <div [formGroup]="doctorForm">
+    <app-input [parentForm]="doctorForm" controlName="name" id="name" label="Imie"></app-input>
+    <app-input controlName="surname" [parentForm]="doctorForm" id="surname" label="Nazwisko"></app-input>
   </div>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button type="submit" class="selectbtn" (click)="addDoctor()" [disabled]="doctorForm.invalid">Potwierdź</button>
-  <button type="submit" class="selectbtn" mat-dialog-close>Anuluj</button>
-</mat-dialog-actions>
+</ng-template>
+<ng-template #modalFooter>
+  <app-button (click)="addDoctor()" [disabled]="doctorForm.invalid" label="Potwierdź"></app-button>
+</ng-template>

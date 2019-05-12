@@ -1,0 +1,32 @@
+select {
+  margin-left: 10px;
+}
+
+:host-context(.yellow-theme) select option {
+  background-color: black;
+  color: white;
+}
+
+:host-context(.yellow-theme) select {
+  background-color: black;
+  color: white;
+}
+
+:host-context(.blue-theme) select option {
+  background-color: white;
+  color: #15375A;
+}
+
+:host-context(.blue-theme) select {
+  background-color: white;
+  color: #15375A;
+}
+
+:host-context(.yellow-theme) label {
+  color: black;
+}
+
+:host-context(.blue-theme) label {
+  color: #15375A;
+}
+

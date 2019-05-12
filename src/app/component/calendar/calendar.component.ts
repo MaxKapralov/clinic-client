@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppointmentProxyService } from '../../proxy/appointment-proxy.service';
 import { Appointment } from '../../model/appointment';
 import { CellData, CellType } from '../table/table.component';
+import { OptionLabelType } from '../form-controls/select/select.component';
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -15,6 +17,7 @@ export class CalendarComponent implements OnInit {
   appointments: Appointment[];
   minDate = new Date();
   calendarForm: FormGroup;
+  OptionLabelTypes = OptionLabelType;
   headers = ['Data', 'Godzina', 'Usługa', 'Lekarz', 'Pacjent'];
   cellData: CellData[] = [{
     path: 'term',
@@ -32,6 +35,7 @@ export class CalendarComponent implements OnInit {
     path: 'patient',
     type: CellType.USER
   }];
+
   constructor(private servicesProxy: ServiceProxyService, private builder: FormBuilder, private appointmentProxy: AppointmentProxyService) {
     this.calendarForm = builder.group({
       serviceId: [null, Validators.required],

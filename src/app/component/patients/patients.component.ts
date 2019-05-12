@@ -26,7 +26,8 @@ export class PatientsComponent implements OnInit {
     type: CellType.STRING
   }, {
     type: CellType.BUTTON,
-    buttonLabel: 'Historia Usług'
+    buttonLabel: 'Historia Usług',
+    disabled: () => false
   }];
   constructor(private userDetailsProxy: UserDetailsProxyService, private router: Router) { }
 

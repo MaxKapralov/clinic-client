@@ -1,42 +1,22 @@
-.row {
-  padding-top: 0;
-  margin-top: 0;
-  width: 30%;
-  float: left;
-  padding-left: 15%;
-}
 
-.usluga
-{
-  width: 100%
+.calendar-container {
+  display: grid;
+  grid-template-rows: auto auto;
 }
-
-.calendar{
-  width:30%;
-  float: left;
-  padding-left: 10%;
-}
-
-.container
-{
-  height: max-content;
-  padding-bottom: 30px;
+.controls-container {
   width: 60%;
-  margin-left: 20%;
-  height: 100px;
-  padding-top: 25px;
-  margin-bottom: 10px;
+  margin: 0 auto 0 auto;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.controls-container div {
+  position: relative
+}
+:host-context(.blue-theme) .calendar-container {
+  background-color: white;
+  color: #15375A;
 }
 
-.lekarzitermin{
-  padding: 15px;
-  margin-top: 20px;
-  margin-left: 10%;
-  width: 15%;
-  height: 300px;
-  text-align: center;
-}
-
-.timetable{
-  padding-left: 50px;
+:host-context(.yellow-theme) .calendar-container {
+  background-color: yellow;
 }

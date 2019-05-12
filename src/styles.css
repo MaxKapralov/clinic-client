@@ -5,16 +5,15 @@ body
   font-family: 'Open Sans',sans-serif;
   font-size: 16px;
   color: #15375A;
-  margin: 0px;
+  margin: 0;
 }
 
 
 p.addmenu
 {
-  font-color: #171B34;
+  color: #171B34;
   font-size: 13px;
-  align: left;
-  margin: 0px;
+  margin: 0;
   padding: 5px;
   padding-left: 10px;
 
@@ -33,14 +32,10 @@ p.addmenu
 
 #menusection
 {
-  background-color: #314455;
-
   height: 40px;
   margin-top: 5px;
-padding-bottom: 10px;
+  padding-bottom: 10px;
   padding-right: 7%;
-  border-top: 1.5px solid #15375A;
-  border-bottom: 1.5px solid #15375A;
 }
 
 
@@ -53,38 +48,17 @@ padding-bottom: 10px;
 
 
 .container {
-  background-color: #F5F6F7;
   padding: 16px;
   margin: 75px;
   width: 37%;
   height: 330px;
   margin-left: 30%;
-  border-radius: 5px;
-  border: 0.5px solid #15375A;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
-}
-
-
-input[type=text], input[type=password]
-{
-  height: 5px;
-  width: 87%;
-  padding: 15px;
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid #15375A;
-  border-radius: 10px;
-  font-size: 15px;
 }
 
 
 .container h1
 {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   color: #15375A;
   font-size: 23px;
   text-align: center;
@@ -116,7 +90,7 @@ input[type=text], input[type=password]
   width: 95%;
   opacity: 1;
   border-radius: 5px;
-  border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0;
 }
 
 a
@@ -125,14 +99,7 @@ a
 }
 
 
-#footer
-{
-  display: block;
-  background-color: #1E2B3A;
-  text-align: center;
-  margin: 0px;
-  padding-bottom: 15px;
-}
+
 
 
 .bottommenu > li
@@ -162,15 +129,7 @@ a
   color: #ffffff;
   text-decoration: none;
 }
-#footer p
-{
-  color: #ffffff;
-  font-size: 12px;
-  display: inline;
-  padding-top: 5px;
-  font-weight: 600;
 
-}
 
 .selectbtn{
   background-color: #171B34;
@@ -186,7 +145,7 @@ a
   width: 100%;
   opacity: 1;
   border-radius: 5px;
-  border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0;
 }
 .selectbtn[disabled] {
   background-color: lightgrey;
@@ -216,3 +175,5 @@ button[disabled] {
   background-color: lightgrey;
   cursor: default;
 }
+
+

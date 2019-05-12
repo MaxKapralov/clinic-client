@@ -1,2 +1,6 @@
-
-
+:host-context(.blue-theme) .history-container {
+  background-color: white;
+}
+:host-context(.yellow-theme) .history-container {
+  background-color: yellow;
+}

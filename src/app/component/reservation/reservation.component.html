@@ -2,14 +2,11 @@
   <div class="container" [formGroup]="reservationForm">
     <h1>Umów wizytę</h1>
 
-    <p>
-      Wybierz usługę
-    </p>
-
     <div class="row">
-      <select id="usluga" formControlName="serviceId">
-        <option *ngFor="let service of services" [value]="service.id">{{service.name}}</option>
-      </select>
+      <app-select [parentForm]="reservationForm"
+                  controlName="serviceId"
+                  [options]="services"
+                  valuePath="id" [optionLabelType]="OptionLabelTypes.NAME" label="Wybierz usługę"></app-select>
     </div>
 
     <div class="calendar">
@@ -24,10 +21,9 @@
         <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
         <mat-datepicker touchUi #pickerTo></mat-datepicker>
       </mat-form-field>
-      <button type="submit" class="selectbtn" (click)="findReservations()" [disabled]="reservationForm.invalid">
-        Wybierz
-      </button>
+      <app-button (click)="findReservations()" [disabled]="reservationForm.invalid" label="Wybierz"></app-button>
     </div>
   </div>
   <app-table [data]="appointments" (operationClick)="reserve($event)" [headers]="headers" [cellData]="cellData"></app-table>
 </div>
+<app-confirmation #confirmation (onAccept)="findReservations()"></app-confirmation>

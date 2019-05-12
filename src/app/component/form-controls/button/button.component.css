@@ -1,0 +1,30 @@
+:host-context(.blue-theme) .button-theme {
+  background-color: #171B34;
+  color: #ffffff;
+  border: 1px solid #15375A;
+}
+:host-context(.yellow-theme) .button-theme {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+:host-context(.yellow-theme) .button-theme[disabled] {
+  background-color: lightgrey;
+  cursor: default;
+}
+:host-context(.blue-theme) .button-theme[disabled] {
+  background-color: lightgrey;
+  cursor: default;
+}
+button {
+  cursor: pointer;
+  width: 100%;
+  opacity: 1;
+  border-radius: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}

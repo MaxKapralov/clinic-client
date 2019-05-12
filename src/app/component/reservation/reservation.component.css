@@ -45,3 +45,12 @@
   margin-top: 8px;
 
 }
+
+:host-context(.yellow-theme) h1 {
+  color: black;
+}
+
+:host-context(.blue-theme) h1 {
+  color: #15375A;
+}
+

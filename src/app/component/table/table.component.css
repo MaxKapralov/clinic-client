@@ -1,10 +1,8 @@
 .table-container {
   margin: 0 auto 0 auto;
-  background-color: #F5F6F7;
   width: 80vw;
   padding-top: 20px;
   padding-bottom: 20px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
 }
 .table-container table {
   margin: 20px auto 20px auto;
@@ -28,4 +26,44 @@
 
 .table-container tr {
   border-bottom: 1px solid black;
+}
+
+:host-context(.blue-theme) .button-theme {
+  background-color: #171B34;
+  color: #ffffff;
+  border: 1px solid #15375A;
+}
+:host-context(.yellow-theme) .button-theme {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+:host-context(.yellow-theme) .button-theme[disabled] {
+  background-color: lightgrey;
+  cursor: default;
+}
+:host-context(.blue-theme) .button-theme[disabled] {
+  background-color: lightgrey;
+  cursor: default;
+}
+:host-context(.blue-theme) .table-header-theme {
+  background: #15375A;
+  color: #ffffff;
+}
+:host-context(.yellow-theme) .table-header-theme {
+  background-color: black;
+  color: white;
+}
+:host-context(.yellow-theme) td {
+  color: black;
+}
+:host-context(.blue-theme) td {
+  color: #15375A;
+}
+:host-context(.yellow-theme) .table-theme {
+  background-color: yellow;
+}
+:host-context(.blue-theme) .table-theme {
+  background-color: white;
 }

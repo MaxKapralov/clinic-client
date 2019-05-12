@@ -2,7 +2,7 @@
 #addsection
 {
   height: 50px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   margin-top: 10px;
   padding-bottom: 10px;
 }
@@ -13,7 +13,7 @@
   padding-top: 5px;
   height: 50px;
   width: 50%;
-  margin: 0px;
+  margin: 0;
   float: left;
 }
 
@@ -21,8 +21,8 @@
 {
   width: auto;
   height: 45px;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   margin-bottom: 10px;
 
 }
@@ -107,15 +107,14 @@
 .lang
 {
   list-style-type: none;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 .lang > li
 {
   display: inline-block;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
   padding-bottom: 10px;
 
 }
@@ -133,7 +132,7 @@
 
 #topnav
 {
-  padding: 0px;
+  padding: 0;
 }
 
 .menu
@@ -148,5 +147,22 @@
   display: inline-block;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 0px;
+  padding-top: 0;
+}
+:host-context(.blue-theme) .menusection {
+  background-color: #314455;
+  border: 1.5px solid #15375A;
+  color: white;
+}
+:host-context(.yellow-theme) .menusection {
+  background-color: black;
+  border: 1.5px solid black;
+  color: white;
+}
+:host-context(.blue-theme) #addsection {
+  background-color: white;
+}
+
+:host-context(.yellow-theme) #addsection {
+  background-color: yellow;
 }

@@ -1,2 +1,4 @@
-<p *ngIf="!history">Nie masz rzadnych wizyt</p>
-<app-table [data]="history" [headers]="headers" [cellData]="cellData"></app-table>
+<div class="history-container">
+  <p *ngIf="!history">Nie masz rzadnych wizyt</p>
+  <app-table [data]="history" [headers]="headers" [cellData]="cellData"></app-table>
+</div>

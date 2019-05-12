@@ -1,0 +1,28 @@
+input {
+  height: 5px;
+  width: 87%;
+  padding: 15px;
+  text-align: center;
+  margin: 5px auto 10px auto;
+  display: block;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+:host-context(.blue-theme) input {
+  border: 1px solid #15375A;
+  background-color: white;
+  color: #15375A;
+}
+
+:host-context(.yellow-theme) input {
+  border: 1px solid #F0E68C;
+  background-color: black;
+  color: yellow;
+}
+:host-context(.yellow-theme) label {
+  color: black;
+}
+:host-context(.blue-theme) label {
+  color: #15375A;
+}

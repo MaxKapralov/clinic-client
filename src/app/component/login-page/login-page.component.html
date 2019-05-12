@@ -1,9 +1,9 @@
-<div>
+<div class="login-container">
     <div class="container" [formGroup]="loginForm">
       <h1>Witamy w Panelu Placówki ORZO</h1>
       <p>Zaloguj się lub <a routerLink="/registration">Zarejestruj się</a></p>
-      <input type="text" placeholder="E-mail" formControlName="username">
-      <input type="password" placeholder="Hasło" formControlName="password">
+      <app-input type="text" placeholder="E-mail" controlName="username" [parentForm]="loginForm"></app-input>
+      <app-input type="password" placeholder="Hasło" controlName="password" [parentForm]="loginForm"></app-input>
       <button type="submit" class="registerbtn" (click)="login()" [disabled]="loginForm.invalid">Zaloguj się</button>
       <p class="terms">By creating an account you agree to our <a routerLink="/terms">Terms & Privacy</a>.</p>
       <div class="resetpsw">

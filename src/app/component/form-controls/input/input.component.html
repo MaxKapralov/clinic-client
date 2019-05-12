@@ -1,0 +1,4 @@
+<div [formGroup]="parentForm">
+  <label [for]="controlName">{{label}}</label>
+  <input [formControlName]="controlName" [type]="type" [placeholder]="placeholder ? placeholder : ''" [id]="controlName">
+</div>

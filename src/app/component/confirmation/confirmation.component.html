@@ -1,27 +1,20 @@
-<h1 mat-dialog-title>Potwierdź rejestrację</h1>
-<mat-dialog-content align="center">
-  <div>
-    <table>
-      <tr>
-        <th>Usługa</th>
-        <td>{{data.service.name}}</td>
-      </tr>
-      <tr>
-        <th>Lekarz</th>
-        <td>{{data.doctor.name + " " + data.doctor.surname}}</td>
-      </tr>
-      <tr>
-        <th>Termin</th>
-        <td>{{utils.formatDate(data.term)}}</td>
-      </tr>
-      <tr>
-        <th>Godzina</th>
-        <td>{{utils.getTime(data.term)}}</td>
-      </tr>
-    </table>
+<app-modal *ngIf="data" [openEvent]="openSubject" [header]="modalHeader" [body]="modalBody" [footer]="modalFooter"
+           #modal modalId="confirmation"></app-modal>
+<ng-template #modalHeader>
+  <h2>Potwierdź rejestrację</h2>
+</ng-template>
+<ng-template #modalBody>
+  <div class="confirm-container">
+    <span>Usługa</span>
+    <span>{{data.service.name}}</span>
+    <span>Lekarz</span>
+    <span>{{data.doctor.name + " " + data.doctor.surname}}</span>
+    <span>Termin</span>
+    <span>{{utils.formatDate(data.term)}}</span>
+    <span>Godzina</span>
+    <span>{{utils.getTime(data.term)}}</span>
   </div>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button type="submit" class="selectbtn" (click)="acceptReservation()">Potwierdź</button>
-  <button type="submit" class="selectbtn" mat-dialog-close>Anuluj</button>
-</mat-dialog-actions>
+</ng-template>
+<ng-template #modalFooter>
+  <app-button label="Potwierdź" (click)="acceptReservation()"></app-button>
+</ng-template>

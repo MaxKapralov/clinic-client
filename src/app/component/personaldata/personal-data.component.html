@@ -1,52 +1,20 @@
- <div class="container">
-
+<div class="personal-data-cont">
+  <div *ngIf="userDetails">
     <h1>Dane Personalne</h1>
-
-<div class="tabelka" *ngIf="userDetails">
-  <table [formGroup]="userDetailsForm">
-    <tr>
-      <th>Imię</th>
-      <td><input formControlName="name"></td>
-    </tr>
-    <tr>
-      <th>Nazwisko</th>
-      <td><input formControlName="surname"></td>
-    </tr>
-    <tr>
-      <th>E-mail</th>
-      <td><input formControlName="email"></td>
-    </tr>
-    <tr>
-      <th>Nr telefonu</th>
-      <td><input formControlName="phoneNumber"></td>
-    </tr>
-    <tr>
-      <th>Miasto</th>
-      <td><input formControlName="city"></td>
-    </tr>
-    <tr>
-      <th>Ulica</th>
-      <td><input formControlName="street"></td>
-    </tr>
-    <tr>
-      <th>Mieszkanie</th>
-      <td><input formControlName="flatNumber"></td>
-    </tr>
-    <tr>
-      <th>Kod pocztowy</th>
-      <td><input formControlName="zipCode"></td>
-    </tr>
-  </table>
-</div>
-
-
-<div class="buttons">
-    <button class="selectbtn" [disabled]="!disableFields" (click)="editDetails()">Edytuj</button>
-    <button type="submit" class="selectbtn" [disabled]="disableFields" (click)="updateDetails()">Potwierdź</button>
-</div>
-
-
-
-
-
+    <div [formGroup]="userDetailsForm">
+      <app-input controlName="name" [parentForm]="userDetailsForm" label="Imię"></app-input>
+      <app-input controlName="surname" [parentForm]="userDetailsForm" label="Nazwisko"></app-input>
+      <app-input controlName="email" [parentForm]="userDetailsForm" label="E-mail"></app-input>
+      <app-input controlName="phoneNumber" [parentForm]="userDetailsForm" label="Numer telefonu"></app-input>
+      <app-input controlName="city" [parentForm]="userDetailsForm" label="Miasto"></app-input>
+      <app-input controlName="street" [parentForm]="userDetailsForm" label="Ulica"></app-input>
+      <app-input controlName="flatNumber" [parentForm]="userDetailsForm" label="Mieszkanie"></app-input>
+      <app-input controlName="zipCode" [parentForm]="userDetailsForm" label="kod-pocztowy"></app-input>
+    </div>
   </div>
+
+  <div>
+    <app-button [disabled]="!disableFields" (click)="editDetails()" label="Edytuj"></app-button>
+    <app-button label="Potwierdź" [disabled]="disableFields" (click)="updateDetails()"></app-button>
+  </div>
+</div>

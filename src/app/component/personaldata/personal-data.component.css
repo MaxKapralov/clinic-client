@@ -1,37 +1,12 @@
-.container
-{
-  padding: 5px;
-  margin: 75px;
-  width: 46%;
-  height: 330px;
-  margin-left: 27%;
-  padding-bottom: 50px;
-
+.personal-data-cont div {
+  width: 50%;
+  margin: 0 auto 0 auto;
 }
-table{
-  float: left;
+:host-context(.blue-theme) .personal-data-cont {
+  color: #15375A;
+  background-color: white;
 }
-
-table, th, td {
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
-  border-collapse: collapse;
-  margin-left: 50px;
-  margin-top: 20px;
+:host-context(.yellow-theme) .personal-data-cont {
+  color: black;
+  background-color: yellow;
 }
-
-th, td {
-  padding: 15px;
-  text-align: left;
-}
-
-td{
-  padding-left: 60px;
-}
-
-.buttons{
-  float: left;
-  margin-left: 50px;
-  width: 100px;
-}
-

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import * as _ from 'lodash';
 import * as utils from '../../Utils';
 
@@ -25,7 +25,7 @@ export interface CellData {
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
   CellType = CellType;
   @Input() headers: string[];
   @Input() cellData: string[];
@@ -33,9 +33,6 @@ export class TableComponent implements OnInit {
   @Output() operationClick: EventEmitter<any> = new EventEmitter();
 
   constructor() {
-  }
-
-  ngOnInit() {
   }
 
   getValueForCell(d: any, c: CellData): string {
@@ -59,6 +56,7 @@ export class TableComponent implements OnInit {
         return d.city + ', ul.' + d.street;
     }
   }
+
   buttonClicked(data: any) {
     this.operationClick.emit(data);
   }
