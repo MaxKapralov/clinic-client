@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MenuBarComponent } from './component/menu-bar/menu-bar.component';
 import { AppComponent } from './component/app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './module/material/material.module';
@@ -13,8 +12,6 @@ import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { environment } from './environment';
 import { TokenStorageService } from './auth/token-storage.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
-import { MainComponent } from './component/main/main.component';
-import { StylesChangerService } from './service/styles-changer.service';
 import { HeaderComponent } from './component/header/header.component';
 import { LoginPageComponent } from './component/login-page/login-page.component';
 import { FooterComponent } from './component/footer/footer.component';
@@ -30,12 +27,15 @@ import { ManageComponent } from './component/manage/manage.component';
 import { NewServiceComponent } from './component/manage/new-service/new-service.component';
 import { NewDoctorComponent } from './component/manage/new-doctor/new-doctor.component';
 import { TableComponent } from './component/table/table.component';
+import { InputComponent } from './component/form-controls/input/input.component';
+import { SelectComponent } from './component/form-controls/select/select.component';
+import { DatepickerComponent } from './component/form-controls/datepicker/datepicker.component';
+import { ButtonComponent } from './component/form-controls/button/button.component';
+import { ModalComponent } from './component/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuBarComponent,
-    MainComponent,
     HeaderComponent,
     LoginPageComponent,
     FooterComponent,
@@ -50,7 +50,12 @@ import { TableComponent } from './component/table/table.component';
     ManageComponent,
     NewServiceComponent,
     NewDoctorComponent,
-    TableComponent
+    TableComponent,
+    InputComponent,
+    SelectComponent,
+    DatepickerComponent,
+    ButtonComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -78,10 +83,6 @@ import { TableComponent } from './component/table/table.component';
       useClass: AuthInterceptorService,
       multi: true
     },
-    {
-      provide: StylesChangerService,
-      useClass: StylesChangerService
-    }
   ],
   bootstrap: [AppComponent]
 })

@@ -3,14 +3,18 @@
   <button class="tablinks" (click)="changeTab($event, 'services', 'doctors')" id="doctBut">Lekarze</button>
 </div>
 <div id="doctors" class="tabcontent">
-  <button class="selectbtn" (click)="addNewDoctor()">Dodaj Nowego Lekarza</button>
-  <app-table [data]="doctors" [cellData]="doctorsCellData" [headers]="doctorsHeaders" (operationClick)="deleteDoctor($event)"></app-table>
+  <app-button (click)="newDoctorModal.open()" label="Dodaj Nowego Lekarza"></app-button>
+  <app-table [data]="doctors" [cellData]="doctorsCellData" [headers]="doctorsHeaders"
+             (operationClick)="deleteDoctor($event)"></app-table>
 </div>
 
 <div id="services" class="tabcontent">
-  <button class="selectbtn" (click)="addNewService()">Dodaj Nową Usługę</button>
+  <app-button (click)="newServiceModal.open()" label="Dodaj Nową Usługę"></app-button>
   <div class="services-container">
-    <app-table [data]="services" (operationClick)="deleteService($event)" [headers]="servicesHeaders" [cellData]="servicesCellData"></app-table>
+    <app-table [data]="services" (operationClick)="deleteService($event)" [headers]="servicesHeaders"
+               [cellData]="servicesCellData"></app-table>
   </div>
 
 </div>
+<app-new-service (updateEntities)="updateServices()" #newServiceModal></app-new-service>
+<app-new-doctor (updateEntities)="updateDoctors()" #newDoctorModal></app-new-doctor>

@@ -1,13 +1,18 @@
 <div class="table-container">
   <div class="controls-container" [formGroup]="doctorForm">
-    <span>Wybierz lekarza:</span>
-    <select formControlName="doctor" (change)="doctorChanged($event.target.value)">
-      <option *ngFor="let doctor of doctors" [value]="doctor.id">{{doctor.name + " " + doctor.surname}}</option>
-    </select>
-    <span>Wybierz usługę</span>
-    <select formControlName="service">
-      <option *ngFor="let service of services" [value]="service.id">{{service.name}}</option>
-    </select>
+    <app-select label="Wybierz lekarza:"
+                [options]="doctors"
+                valuePath="id"
+                [parentForm]="doctorForm"
+                controlName="doctor"
+                (change)="doctorChanged($event.target.value)"
+                [optionLabelType]="OptionLabelTypes.FULLNAME"></app-select>
+    <app-select label="Wybierz usługę"
+                [options]="services"
+                valuePath="id"
+                [parentForm]="doctorForm"
+                controlName="service"
+                [optionLabelType]="OptionLabelTypes.NAME"></app-select>
   </div>
   <app-table [data]="appointments" [headers]="headers" [cellData]="cellData" (operationClick)="add($event)"></app-table>
 </div>

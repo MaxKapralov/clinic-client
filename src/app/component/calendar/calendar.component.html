@@ -1,23 +1,12 @@
-<div>
-  <div class="container" [formGroup]="calendarForm">
-    <div class="row">
-      <p>
-        Wybierz usługę
-      </p>
-      <select class="usluga" formControlName="serviceId">
-        <option *ngFor="let service of services" [value]="service.id">{{service.name}}</option>
-      </select>
-    </div>
-    <div class="calendar">
-      <mat-form-field>
-        <input matInput [matDatepicker]="pickerFrom" placeholder="Wybierz date" formControlName="date"
-               [min]="minDate">
-        <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
-        <mat-datepicker touchUi #pickerFrom></mat-datepicker>
-      </mat-form-field>
-    </div>
-    <button type="submit" class="selectbtn" [disabled]="calendarForm.controls['serviceId'].invalid && calendarForm.controls['date'].invalid" (click)="findAppointments()">Wybierz</button>
+<div class="calendar-container">
+  <div [formGroup]="calendarForm" class="controls-container">
+    <app-select [parentForm]="calendarForm" controlName="serviceId" [options]="services" valuePath="id"
+                [optionLabelType]="OptionLabelTypes.NAME" label="Wybierz usługę"></app-select>
+    <app-datepicker [parentForm]="calendarForm" controlName="date" placeholder="Wybierz date"
+                    [minDate]="minDate"></app-datepicker>
   </div>
+  <app-button label="Wybierz"
+              [disabled]="calendarForm.controls['serviceId'].invalid && calendarForm.controls['date'].invalid"
+              (click)="findAppointments()"></app-button>
   <app-table [data]="appointments" [headers]="headers" [cellData]="cellData"></app-table>
 </div>
-

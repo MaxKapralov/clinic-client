@@ -27,7 +27,7 @@ export class RegistrationComponent implements OnInit {
       email: [null, Validators.required],
       password: [null, [Validators.required, Validators.pattern(/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/)]],
       confirmPassword: [null, Validators.required]
-    }, {validator: PasswordValidator.matchPassword});
+    }, { validator: PasswordValidator.matchPassword });
   }
 
   ngOnInit() {
@@ -46,6 +46,6 @@ export class RegistrationComponent implements OnInit {
       pesel: this.registrationForm.controls['pesel'].value,
       password: this.registrationForm.controls['password'].value,
     };
-    this.newUserService.add(newUser).subscribe(() => this.router.navigate([''])); // todo error handler
+    this.newUserService.add(newUser).subscribe(() => this.router.navigate(['']));
   }
 }

@@ -29,7 +29,9 @@ export class PatientsComponent implements OnInit {
     buttonLabel: 'Historia Usług',
     disabled: () => false
   }];
-  constructor(private userDetailsProxy: UserDetailsProxyService, private router: Router) { }
+
+  constructor(private userDetailsProxy: UserDetailsProxyService, private router: Router) {
+  }
 
   ngOnInit() {
     this.userDetailsProxy.getAllUsers().subscribe(data => this.patients = data);

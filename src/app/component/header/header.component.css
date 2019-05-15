@@ -1,34 +1,30 @@
 
-#addsection
-{
+#addsection {
   height: 50px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   margin-top: 10px;
   padding-bottom: 10px;
 }
 
-.logo
-{
+.logo {
   padding-left: 50px;
   padding-top: 5px;
   height: 50px;
   width: 50%;
-  margin: 0px;
+  margin: 0;
   float: left;
 }
 
-#logoimage
-{
+#logoimage {
   width: auto;
   height: 45px;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   margin-bottom: 10px;
 
 }
 
-.fontsize
-{
+.fontsize {
   height: 50px;
   width: 15%;
   margin-left: 5px;
@@ -36,117 +32,170 @@
 
 }
 
-
-#Asmall
-{
-  width: auto;
-  height: 30px;
-  padding-left: 10px;
-  float: left;
-}
-#Amedium
-{
-  width: auto;
-  height: 30px;
-  padding-left: 10px;
-  float: left;
-}
-#Abig
-{
+#Asmall {
   width: auto;
   height: 30px;
   padding-left: 10px;
   float: left;
 }
 
-.pagecolor
-{
+#Amedium {
+  width: auto;
+  height: 30px;
+  padding-left: 10px;
+  float: left;
+}
+
+#Abig {
+  width: auto;
+  height: 30px;
+  padding-left: 10px;
+  float: left;
+}
+
+.pagecolor {
   height: 50px;
   width: 15%;
   float: left;
   margin-left: 5px;
 }
 
-#blue
-{
+#blue {
   width: auto;
   height: 25px;
   margin-bottom: 10px;
   margin-left: 10px;
 
+}
 
-}
-#black
-{
-  width: auto;
-  height: 25px;
-  margin-bottom: 10px;
-}
-#yellow
-{
+#black {
   width: auto;
   height: 25px;
   margin-bottom: 10px;
 }
 
-#darkblue
-{
+#yellow {
+  width: auto;
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+#darkblue {
   width: auto;
   height: 25px;
   margin-bottom: 10px;
 
 }
-.language
-{
+
+.language {
   height: 50px;
   width: 10%;
   float: left;
   margin-left: 5px;
 }
 
-.lang
-{
+.lang {
   list-style-type: none;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
-.lang > li
-{
+.lang > li {
   display: inline-block;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
   padding-bottom: 10px;
 
 }
 
-.lang a
-{
+.lang a {
   color: #15375A;
   text-decoration: none;
 }
-.lang> li:first-child
-{
+
+.lang > li:first-child {
   padding-left: 10px;
 }
 
-
-#topnav
-{
-  padding: 0px;
+#topnav {
+  padding: 0;
 }
 
-.menu
-{
+.menu {
   list-style-type: none;
   text-align: right;
   padding-bottom: 10px;
 }
 
-.menu > li
-{
+.menu > li {
   display: inline-block;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 0px;
+  padding-top: 0;
+}
+
+:host-context(.blue-theme) .menusection {
+  background-color: #314455;
+  border: 1.5px solid #15375A;
+  color: white;
+}
+
+:host-context(.yellow-theme) .menusection {
+  background-color: black;
+  border: 1.5px solid black;
+  color: white;
+}
+
+:host-context(.blue-theme) #addsection {
+  background-color: white;
+}
+
+:host-context(.yellow-theme) #addsection {
+  background-color: yellow;
+}
+
+:host-context(.black-white-theme) #addsection {
+  background-color: black;
+}
+
+:host-context(.black-white-theme) .menusection {
+  background-color: darkgrey;
+  border: 1.5px solid darkgrey;
+  color: white;
+}
+
+:host-context(.black-yellow-theme) #addsection {
+  background-color: black;
+}
+
+:host-context(.black-yellow-theme) .menusection {
+  background-color: darkgrey;
+  border: 1.5px solid darkgrey;
+}
+
+:host-context(.black-yellow-theme) .menusection ul li a {
+  color: yellow;
+}
+
+:host-context(.black-white-theme) .menusection ul li a {
+  color: white;
+}
+
+:host-context(.yellow-theme) .menusection ul li a {
+  color: yellow;
+}
+
+:host-context(.blue-theme) .menusection ul li a {
+  color: white;
+}
+
+:host-context(.font-size-medium) #topnav ul li a {
+  font-size: 20px;
+}
+
+:host-context(.font-size-small) #topnav ul li a {
+  font-size: 16px;
+}
+
+:host-context(.font-size-big) #topnav ul li a {
+  font-size: 24px;
 }

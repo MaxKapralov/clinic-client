@@ -1,18 +1,15 @@
 .table-container {
   margin: 0 auto 0 auto;
-  background-color: #F5F6F7;
   width: 80vw;
   padding-top: 20px;
   padding-bottom: 20px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
 }
+
 .table-container table {
   margin: 20px auto 20px auto;
 }
 
 .table-container table, th {
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
   border-collapse: collapse;
   align-self: center;
 }
@@ -26,6 +23,92 @@
   padding: 25px;
 }
 
-.table-container tr {
+.button-theme[disabled] {
+  background-color: lightgrey;
+  cursor: default;
+}
+
+.button-theme[disabled] {
+  background-color: lightgrey;
+  cursor: default;
+}
+
+:host-context(.blue-theme) .table-container tr {
+  border-bottom: 1px solid #15375A;
+}
+
+:host-context(.yellow-theme) .table-container tr {
   border-bottom: 1px solid black;
+}
+
+:host-context(.blue-theme) .table-header-theme {
+  background: #15375A;
+  color: #ffffff;
+}
+
+:host-context(.yellow-theme) .table-header-theme {
+  background-color: black;
+  color: white;
+}
+
+:host-context(.yellow-theme) td {
+  color: black;
+}
+
+:host-context(.blue-theme) td {
+  color: #15375A;
+}
+
+:host-context(.yellow-theme) .table-theme {
+  background-color: yellow;
+}
+
+:host-context(.blue-theme) .table-theme {
+  background-color: white;
+}
+
+:host-context(.black-white-theme) .table-header-theme {
+  background: darkgrey;
+  color: white;
+}
+
+:host-context(.black-white-theme) td {
+  color: white;
+}
+
+:host-context(.black-white-theme) .table-theme {
+  background-color: black;
+}
+
+:host-context(.black-white-theme) .table-container tr {
+  border-bottom: 1px solid darkgray;
+}
+
+:host-context(.black-yellow-theme) .table-header-theme {
+  background: darkgrey;
+  color: yellow;
+}
+
+:host-context(.black-yellow-theme) td {
+  color: yellow;
+}
+
+:host-context(.black-yellow-theme) .table-theme {
+  background-color: black;
+}
+
+:host-context(.black-yellow-theme) .table-container tr {
+  border-bottom: 1px solid darkgray;
+}
+
+:host-context(.font-size-small) .table-container {
+  font-size: 16px;
+}
+
+:host-context(.font-size-medium) .table-container {
+  font-size: 20px;
+}
+
+:host-context(.font-size-big) .table-container {
+  font-size: 24px;
 }

@@ -1,0 +1,74 @@
+input {
+  height: 5px;
+  width: 87%;
+  padding: 15px;
+  text-align: center;
+  margin: 5px auto 10px auto;
+  display: block;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+:host-context(.blue-theme) input {
+  border: 1px solid #15375A;
+  background-color: white;
+  color: #15375A;
+}
+
+:host-context(.yellow-theme) input {
+  border: 1px solid #F0E68C;
+  background-color: black;
+  color: yellow;
+}
+
+:host-context(.yellow-theme) label {
+  color: black;
+}
+
+:host-context(.blue-theme) label {
+  color: #15375A;
+}
+
+:host-context(.black-white-theme) label {
+  color: white;
+}
+
+:host-context(.black-white-theme) input {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+
+:host-context(.black-yellow-theme) label {
+  color: yellow;
+}
+
+:host-context(.black-yellow-theme) input {
+  border: 1px solid black;
+  background-color: yellow;
+  color: black;
+}
+
+:host-context(.font-size-small) label {
+  font-size: 16px;
+}
+
+:host-context(.font-size-medium) label {
+  font-size: 20px;
+}
+
+:host-context(.font-size-big) label {
+  font-size: 24px;
+}
+
+:host-context(.font-size-small) input {
+  font-size: 14px;
+}
+
+:host-context(.font-size-medium) input {
+  font-size: 18px;
+}
+
+:host-context(.font-size-big) input {
+  font-size: 22px;
+}

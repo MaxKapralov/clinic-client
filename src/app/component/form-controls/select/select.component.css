@@ -1,0 +1,83 @@
+select {
+  margin-left: 10px;
+}
+
+:host-context(.yellow-theme) select option {
+  background-color: black;
+  color: white;
+}
+
+:host-context(.yellow-theme) select {
+  background-color: black;
+  color: white;
+}
+
+:host-context(.blue-theme) select option {
+  background-color: white;
+  color: #15375A;
+}
+
+:host-context(.blue-theme) select {
+  background-color: white;
+  color: #15375A;
+}
+
+:host-context(.yellow-theme) label {
+  color: black;
+}
+
+:host-context(.blue-theme) label {
+  color: #15375A;
+}
+
+:host-context(.black-white-theme) select {
+  background-color: white;
+  color: black;
+}
+
+:host-context(.black-white-theme) select option {
+  background-color: white;
+  color: black;
+}
+
+:host-context(.black-white-theme) label {
+  color: white;
+}
+
+:host-context(.black-yellow-theme) select {
+  background-color: white;
+  color: black;
+}
+
+:host-context(.black-yellow-theme) select option {
+  background-color: white;
+  color: black;
+}
+
+:host-context(.black-yellow-theme) label {
+  color: yellow;
+}
+
+:host-context(.font-size-small) select {
+  font-size: 14px;
+}
+
+:host-context(.font-size-medium) select {
+  font-size: 18px;
+}
+
+:host-context(.font-size-big) select {
+  font-size: 22px;
+}
+
+:host-context(.font-size-small) label {
+  font-size: 16px;
+}
+
+:host-context(.font-size-medium) label {
+  font-size: 20px;
+}
+
+:host-context(.font-size-big) label {
+  font-size: 24px;
+}

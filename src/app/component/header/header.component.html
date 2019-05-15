@@ -7,44 +7,43 @@
 
     <div class="fontsize">
       <p class="addmenu">Rozmiar czcionki</p>
-      <a href="#"><img id="Asmall" src="../../../assets/image/A.png"></a>
-      <a href="#"><img id="Amedium" src="../../../assets/image/A+.png"></a>
-      <a href="#"><img id="Abig" src="../../../assets/image/A++.png"></a>
+      <a (click)="changeFontSize(Fonts.SMALL)"><img id="Asmall" src="../../../assets/image/A.png"></a>
+      <a (click)="changeFontSize(Fonts.MEDIUM)"><img id="Amedium" src="../../../assets/image/A+.png"></a>
+      <a (click)="changeFontSize(Fonts.BIG)"><img id="Abig" src="../../../assets/image/A++.png"></a>
     </div>
 
     <div class="pagecolor">
       <p class="addmenu">Kontrast</p>
 
-      <a href="#"><img id="black" src="../../../assets/image/black-01.png"></a>
-      <a href="#"><img id="yellow" src="../../../assets/image/yellow-01.png"></a>
-      <a href="#"><img id="darkblue" src="../../../assets/image/darkblue-01.png"></a>
-    </div>
-
-    <div class="language">
-      <p class="addmenu">Język</p>
-      <ul class="lang">
-        <li><a href="#">PL</a></li>
-        <li>|</li>
-        <li><a href="#">EN</a></li>
-      </ul>
+      <a (click)="changeStyle(Themes.BLAKC_WHITE)"><img id="black" src="../../../assets/image/black-01.png"></a>
+      <a (click)="changeStyle(Themes.YELLOW_BLACK)"><img id="yellow" src="../../../assets/image/yellow-01.png"></a>
+      <a (click)="changeStyle(Themes.BLUE)"><img id="darkblue" src="../../../assets/image/darkblue-01.png"></a>
     </div>
 
   </section>
 
-  <section id="menusection">
+  <section class="menusection">
 
     <nav id="topnav">
       <ul class="menu">
-        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.USER)"><a routerLink="/personal-data">Dane Osobowe</a> </li>
-        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.USER)"><a routerLink="/history">Historia</a> </li>
-        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.USER)"><a routerLink="/reservation">Zarezerwuj wizytę</a></li>
-        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/patients">Użytkownicy przychodni</a> </li>
-        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/calendar">Kalendarz zapisów</a> </li>
-        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/doctors">Terminy przyjęć lekarskich</a> </li>
-        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/manage">Zarządzaj</a> </li>
+        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.USER)"><a routerLink="/personal-data">Dane
+          Osobowe</a></li>
+        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.USER)"><a routerLink="/history">Historia</a>
+        </li>
+        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.USER)"><a routerLink="/reservation">Zarezerwuj
+          wizytę</a></li>
+        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/patients">Użytkownicy
+          przychodni</a></li>
+        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/calendar">Kalendarz
+          zapisów</a></li>
+        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/doctors">Terminy
+          przyjęć lekarskich</a></li>
+        <li *ngIf="authService.isAuthenticated() && authService.isAuthorize(Roles.ADMIN)"><a routerLink="/manage">Zarządzaj</a>
+        </li>
         <li *ngIf="!authService.isAuthenticated()"><a routerLink="/login">Logowanie</a></li>
         <li *ngIf="!authService.isAuthenticated()"><a routerLink="/registration">Rejestracja</a></li>
-        <li *ngIf="authService.isAuthenticated()"><a (click)="authService.logout()" style="cursor: pointer">Wyloguj</a></li>
+        <li *ngIf="authService.isAuthenticated()"><a (click)="authService.logout()" style="cursor: pointer">Wyloguj</a>
+        </li>
       </ul>
     </nav>
 

@@ -1,0 +1,6 @@
+<span [formGroup]="parentForm">
+  <label for="app-select">{{label}}</label>
+  <select [formControlName]="controlName" id="app-select" (change)="selectChange($event)">
+    <option *ngFor="let o of options" [value]="getValueByPath(o)">{{getOptionLabel(o)}}</option>
+  </select>
+</span>

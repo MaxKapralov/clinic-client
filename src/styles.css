@@ -1,104 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-body
-{ background-color: white;
-  font-family: 'Open Sans',sans-serif;
+
+body {
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   color: #15375A;
-  margin: 0px;
+  margin: 0;
 }
 
-
-p.addmenu
-{
-  font-color: #171B34;
+p.addmenu {
   font-size: 13px;
-  align: left;
-  margin: 0px;
+  margin: 0;
   padding: 5px;
   padding-left: 10px;
 
 }
 
-
-.lang a
-{
-  color: #15375A;
+.lang a {
   text-decoration: none;
 }
-.lang> li:first-child
-{
+
+.lang > li:first-child {
   padding-left: 10px;
 }
 
-#menusection
-{
-  background-color: #314455;
-
+#menusection {
   height: 40px;
   margin-top: 5px;
-padding-bottom: 10px;
+  padding-bottom: 10px;
   padding-right: 7%;
-  border-top: 1.5px solid #15375A;
-  border-bottom: 1.5px solid #15375A;
 }
 
-
-
-.menu a
-{
-  color: #ffffff;
+.menu a {
   text-decoration: none;
 }
 
-
 .container {
-  background-color: #F5F6F7;
-  padding: 16px;
-  margin: 75px;
   width: 37%;
   height: 330px;
   margin-left: 30%;
-  border-radius: 5px;
-  border: 0.5px solid #15375A;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-input[type=text], input[type=password]
-{
-  height: 5px;
-  width: 87%;
-  padding: 15px;
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid #15375A;
-  border-radius: 10px;
-  font-size: 15px;
-}
-
-
-.container h1
-{
-  margin-bottom: 0px;
-  color: #15375A;
+.container h1 {
+  margin-bottom: 0;
   font-size: 23px;
   text-align: center;
 
 }
 
-.container p
-{
+.container p {
   margin-top: 3px;
-  color: #15375A;
   text-align: center
 
 }
-
 
 .registerbtn {
   background-color: #C96567;
@@ -116,27 +71,10 @@ input[type=text], input[type=password]
   width: 95%;
   opacity: 1;
   border-radius: 5px;
-  border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0;
 }
 
-a
-{
-  color: dodgerblue;
-}
-
-
-#footer
-{
-  display: block;
-  background-color: #1E2B3A;
-  text-align: center;
-  margin: 0px;
-  padding-bottom: 15px;
-}
-
-
-.bottommenu > li
-{
+.bottommenu > li {
   display: inline-block;
 
   padding-left: 20px;
@@ -144,35 +82,21 @@ a
   border-right: 1px solid #ffffff;
 }
 
-.bottommenu > li:first-child
-{
+.bottommenu > li:first-child {
   border-left: 1px solid #ffffff;
 }
 
-.bottommenu a
-{
+.bottommenu a {
   color: #ffffff;
   text-decoration: none;
 }
 
-
-
-.contact a
-{
+.contact a {
   color: #ffffff;
   text-decoration: none;
 }
-#footer p
-{
-  color: #ffffff;
-  font-size: 12px;
-  display: inline;
-  padding-top: 5px;
-  font-weight: 600;
 
-}
-
-.selectbtn{
+.selectbtn {
   background-color: #171B34;
   color: #ffffff;
   font-size: 12px;
@@ -186,15 +110,15 @@ a
   width: 100%;
   opacity: 1;
   border-radius: 5px;
-  border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0;
 }
+
 .selectbtn[disabled] {
   background-color: lightgrey;
   cursor: default;
 }
 
-
-.lekarzitermin{
+.lekarzitermin {
   background-color: #F5F6F7;
   padding: 15px;
   margin: 75px;
@@ -207,7 +131,7 @@ a
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-th{
+th {
   background: #15375A;
   color: #ffffff;
 }
@@ -216,3 +140,5 @@ button[disabled] {
   background-color: lightgrey;
   cursor: default;
 }
+
+

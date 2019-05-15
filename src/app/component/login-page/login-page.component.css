@@ -1,47 +1,78 @@
-input[type=text]:focus, input[type=password]:focus
-{
-
-  opacity: 0.5;
-
-}
-
-
-.terms
-{
+.terms {
   font-size: 12px;
-  margin-top: 0px;
-  padding: 0px;
+  margin-top: 0;
+  padding: 0;
 }
 
 .registerbtn:hover {
-  opacity:0.7;
+  opacity: 0.7;
 }
 
-
-.resetpsw
-{
-  float:left;
+.resetpsw {
+  float: left;
   width: 50%
 
 }
-.resetpsw p
-{
+
+.resetpsw p {
   text-align: left;
-  margin: 0px;
+  margin: 0;
   padding-left: 20px;
   margin-top: 15px;
 }
 
-.registration
-{
-  float:left;
+.registration {
+  float: left;
   width: 50%
 }
 
-.registration p
-{
+.registration p {
   text-align: right;
-  margin: 0px;
+  margin: 0;
   padding-right: 20px;
   margin-top: 15px;
+}
+
+:host-context(.blue-theme) .login-container {
+  background-color: white;
+  color: #15375A;
+}
+
+:host-context(.yellow-theme) .login-container {
+  background-color: yellow;
+  color: black;
+}
+
+:host-context(.black-white-theme) .login-container {
+  background-color: black;
+  color: white;
+}
+
+:host-context(.black-yellow-theme) .login-container {
+  background-color: black;
+  color: yellow;
+}
+
+:host-context(.font-size-small) .container h1 {
+  font-size: 24px;
+}
+
+:host-context(.font-size-medium) .container h1 {
+  font-size: 26px;
+}
+
+:host-context(.font-size-big) .container h1 {
+  font-size: 28px;
+}
+
+:host-context(.font-size-small) .container p {
+  font-size: 16px;
+}
+
+:host-context(.font-size-medium) .container p {
+  font-size: 20px;
+}
+
+:host-context(.font-size-big) .container p {
+  font-size: 24px;
 }

@@ -26,6 +26,21 @@
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
   border-top: none;
+}
+
+:host-context(.black-white-theme) .tabcontent {
+  background-color: black;
+}
+
+:host-context(.font-size-small) .tablinks {
+  font-size: 14px;
+}
+
+:host-context(.font-size-medium) .tablinks {
+  font-size: 16px;
+}
+
+:host-context(.font-size-big) .tablinks {
+  font-size: 20px;
 }

@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { DoctorProxyService } from '../../proxy/doctor-proxy.service';
 import { Doctor } from '../../model/doctor';
 import { CellData, CellType } from '../table/table.component';
+import { OptionLabelType } from '../form-controls/select/select.component';
 
 @Component({
   selector: 'app-doctors',
@@ -20,6 +21,7 @@ export class DoctorsComponent implements OnInit {
   services: Service[];
   doctors: Doctor[];
   doctorForm: FormGroup;
+  OptionLabelTypes = OptionLabelType;
   headers: string[] = ['Dzień Tygodnia', 'Data', 'Godzina', 'Operacje'];
   cellData: CellData[] = [{
     path: 'term',
@@ -68,7 +70,7 @@ export class DoctorsComponent implements OnInit {
     if (appointment.service) {
       this.appointmentProxy.addAppointment(appointment).subscribe(() => this.getAppointments(this.doctorForm.controls['doctor'].value));
     } else {
-      // todo show message
+      alert('Proszę wybrać usługę');
     }
   }
 }

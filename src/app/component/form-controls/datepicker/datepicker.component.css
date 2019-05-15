@@ -1,0 +1,66 @@
+:host-context(.blue-theme) .date-input {
+  color: #171B34;
+  border: 1px solid #15375A;
+}
+
+:host-context(.yellow-theme) .date-input {
+  background-color: black;
+  color: yellow;
+  border: 1px solid black;
+}
+
+:host-context(.black-white-theme) .date-input {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+}
+
+:host-context(.black-yellow-theme) .date-input {
+  background-color: yellow;
+  color: black;
+  border: 1px solid yellow;
+}
+
+label {
+  padding-right: 20px;
+}
+
+:host-context(.blue-theme) label {
+  color: #171B34;
+}
+
+:host-context(.yellow-theme) label {
+  color: black;
+}
+
+:host-context(.black-white-theme) label {
+  color: white;
+}
+
+:host-context(.black-yellow-theme) label {
+  color: yellow;
+}
+
+:host-context(.font-size-small) .date-input {
+  font-size: 14px;
+}
+
+:host-context(.font-size-medium) .date-input {
+  font-size: 18px;
+}
+
+:host-context(.font-size-big) .date-input {
+  font-size: 22px;
+}
+
+:host-context(.font-size-small) label {
+  font-size: 16px;
+}
+
+:host-context(.font-size-medium) label {
+  font-size: 20px;
+}
+
+:host-context(.font-size-big) label {
+  font-size: 24px;
+}

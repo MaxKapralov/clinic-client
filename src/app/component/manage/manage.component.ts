@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ServiceProxyService } from '../../proxy/service-proxy.service';
 import { Service } from '../../model/service';
-import { MatDialog } from '@angular/material';
-import { NewServiceComponent } from './new-service/new-service.component';
 import { DoctorProxyService } from '../../proxy/doctor-proxy.service';
 import { Doctor } from '../../model/doctor';
 import { forkJoin } from 'rxjs';
-import { NewDoctorComponent } from './new-doctor/new-doctor.component';
 import { CellData, CellType } from '../table/table.component';
+import { NewDoctorComponent } from './new-doctor/new-doctor.component';
+import { NewServiceComponent } from './new-service/new-service.component';
 
 @Component({
   selector: 'app-manage',
@@ -18,6 +17,8 @@ export class ManageComponent implements OnInit {
 
   services: Service[];
   doctors: Doctor[];
+  @ViewChild('newDoctorModal') newDoctorModal: NewDoctorComponent;
+  @ViewChild('newServiceModal') newServiceModal: NewServiceComponent;
   servicesHeaders: string[] = ['Nazwa Usługi', 'Operacje'];
   servicesCellData: CellData[] = [{
     path: 'name',
@@ -39,7 +40,8 @@ export class ManageComponent implements OnInit {
     buttonLabel: 'Usuń Lekarza',
     disabled: () => false
   }];
-  constructor(private servicesProxy: ServiceProxyService, private dialog: MatDialog, private doctorProxy: DoctorProxyService) {
+
+  constructor(private servicesProxy: ServiceProxyService, private doctorProxy: DoctorProxyService) {
   }
 
   ngOnInit() {
@@ -72,19 +74,15 @@ export class ManageComponent implements OnInit {
     this.servicesProxy.deleteService(service.id).subscribe(() => this.loadEntities());
   }
 
-  addNewService() {
-    this.dialog.open(NewServiceComponent).afterClosed().subscribe(data => {
-      this.servicesProxy.addService(data).subscribe(() => this.loadEntities());
-    });
-  }
-
   deleteDoctor(doctor: Doctor) {
     this.doctorProxy.deleteDoctor(doctor.id).subscribe(() => this.loadEntities());
   }
 
-  addNewDoctor() {
-    this.dialog.open(NewDoctorComponent).afterClosed().subscribe(data => {
-      this.doctorProxy.addDoctor(data).subscribe(() => this.loadEntities());
-    });
+  updateDoctors() {
+    this.doctorProxy.getAllDoctors().subscribe(data => this.doctors = data);
+  }
+
+  updateServices() {
+    this.servicesProxy.getAllServices().subscribe(data => this.services = data);
   }
 }

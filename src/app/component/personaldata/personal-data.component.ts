@@ -13,17 +13,18 @@ export class PersonalDataComponent implements OnInit {
   userDetails: UserDetails;
   userDetailsForm: FormGroup;
   disableFields = true;
+
   constructor(private userDetailsProxy: UserDetailsProxyService, private builder: FormBuilder) {
     this.userDetailsForm = this.builder.group({
-      name: [{value: null, disabled: this.disableFields}, Validators.required],
-      surname: [{value: null, disabled: this.disableFields}, Validators.required],
-      phoneNumber: [{value: null, disabled: this.disableFields},
+      name: [{ value: null, disabled: this.disableFields }, Validators.required],
+      surname: [{ value: null, disabled: this.disableFields }, Validators.required],
+      phoneNumber: [{ value: null, disabled: this.disableFields },
         [Validators.required, Validators.pattern(/^\d{9}$/)]],
-      flatNumber: [{value: null, disabled: this.disableFields}, Validators.required],
-      street: [{value: null, disabled: this.disableFields}, Validators.required],
-      city: [{value: null, disabled: this.disableFields}, Validators.required],
-      zipCode: [{value: null, disabled: this.disableFields}, Validators.required],
-      email: [{value: null, disabled: this.disableFields}, Validators.required],
+      flatNumber: [{ value: null, disabled: this.disableFields }, Validators.required],
+      street: [{ value: null, disabled: this.disableFields }, Validators.required],
+      city: [{ value: null, disabled: this.disableFields }, Validators.required],
+      zipCode: [{ value: null, disabled: this.disableFields }, Validators.required],
+      email: [{ value: null, disabled: this.disableFields }, Validators.required],
     });
   }
 
@@ -42,10 +43,12 @@ export class PersonalDataComponent implements OnInit {
       });
     });
   }
+
   editDetails() {
     this.disableFields = false;
     this.enableForm();
   }
+
   updateDetails() {
     this.disableFields = true;
     this.disableForm();
@@ -67,6 +70,7 @@ export class PersonalDataComponent implements OnInit {
   enableForm() {
     Object.keys(this.userDetailsForm.controls).forEach(key => this.userDetailsForm.controls[key].enable());
   }
+
   disableForm() {
     Object.keys(this.userDetailsForm.controls).forEach(key => this.userDetailsForm.controls[key].disable());
   }

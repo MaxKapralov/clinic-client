@@ -1,15 +1,14 @@
-<h1 mat-dialog-title>Dodaj nową usługę</h1>
-<mat-dialog-content align="center">
-  <div>
-    <table>
-      <tr [formGroup]="serviceForm">
-        <th>Nazwa usługi</th>
-        <td><input formControlName="name"></td>
-      </tr>
-    </table>
+<app-modal [openEvent]="openSubject" [header]="modalHeader" [body]="modalBody" [footer]="modalFooter" #modal
+           modalId="new-service"></app-modal>
+<ng-template #modalHeader>
+  <h2>Dodaj nową usługę</h2>
+</ng-template>
+<ng-template #modalBody>
+  <div [formGroup]="serviceForm">
+    <app-input controlName="name" [parentForm]="serviceForm" label="Nazwa"></app-input>
   </div>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button type="submit" class="selectbtn" (click)="addService()" [disabled]="serviceForm.invalid">Potwierdź</button>
-  <button type="submit" class="selectbtn" mat-dialog-close>Anuluj</button>
-</mat-dialog-actions>
+</ng-template>
+<ng-template #modalFooter>
+  <app-button (click)="addService()" [disabled]="serviceForm.invalid" label="Potwierdź"></app-button>
+</ng-template>
+

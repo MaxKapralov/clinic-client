@@ -4,7 +4,8 @@ import { EntityService } from '../../service/entity.service';
 
 export abstract class EntitiesComponent<T extends Entity> {
 
-  constructor(private entityService: EntityService<T>) { }
+  constructor(private entityService: EntityService<T>) {
+  }
 
   saveEntity(entity: T) {
     if (entity.id) {

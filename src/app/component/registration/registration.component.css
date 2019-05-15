@@ -2,23 +2,35 @@
   width: 70%;
   height: auto;
   margin-left: 15%;
-  border-radius: 20px;
-  border: 0.5px solid #15375A;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.inputs-grid{
+.inputs-grid {
   display: grid;
   grid-template-columns: auto auto;
 }
+
 .error {
   font-size: 10px;
   margin-left: 10px;
 }
+
 .red {
   color: red;
 }
+
 .input-message {
   display: grid;
   grid-template-rows: auto auto;
+}
+
+:host-context(.font-size-small) .error {
+  font-size: 10px;
+}
+
+:host-context(.font-size-medium) .error {
+  font-size: 14px;
+}
+
+:host-context(.font-size-big) .error {
+  font-size: 18px;
 }

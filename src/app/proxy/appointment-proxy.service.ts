@@ -19,15 +19,19 @@ export class AppointmentProxyService {
       .set('from', moment(from).format()).set('to', moment(to).format());
     return this.appointmentService.getAll(params);
   }
+
   reserve(id: number, username: string): Observable<Appointment> {
     return this.appointmentService.reserve(id, username);
   }
+
   getHistory(username: string): Observable<Appointment[]> {
     return this.appointmentService.getHistory(username);
   }
+
   getHistoryForPatient(id: number): Observable<Appointment[]> {
     return this.appointmentService.getHistoryForPatient(id);
   }
+
   getAppointmentsForServiceAndDate(id: string, date: Date): Observable<Appointment[]> {
     let params = new HttpParams({ encoder: this.customEncoderService });
     if (id) {
@@ -38,10 +42,12 @@ export class AppointmentProxyService {
     }
     return this.appointmentService.getAppointmentsForServiceAndDate(params);
   }
+
   getAppointmentsForWeek(monday: string, id: string): Observable<Appointment[]> {
     const params = new HttpParams({ encoder: this.customEncoderService }).set('date', moment(monday).format()).set('id', id);
     return this.appointmentService.getForWeek(params);
   }
+
   addAppointment(appointment: Appointment): Observable<Appointment> {
     return this.appointmentService.add(appointment);
   }

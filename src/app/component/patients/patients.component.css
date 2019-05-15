@@ -1,0 +1,7 @@
+:host-context(.blue-theme) .patients-container {
+  background-color: white;
+}
+
+:host-context(.yellow-theme) .patients-container {
+  background-color: yellow;
+}

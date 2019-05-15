@@ -1,12 +1,13 @@
-<div class="table-container" *ngIf="data">
+<div class="table-container table-theme" *ngIf="data">
   <table>
     <tr>
-      <th *ngFor="let header of headers">{{header}}</th>
+      <th *ngFor="let header of headers" class="table-header-theme">{{header}}</th>
     </tr>
     <tr *ngFor="let d of data">
       <td *ngFor="let c of cellData">
         <span *ngIf="c.type!==CellType.BUTTON">{{getValueForCell(d, c)}}</span>
-        <button class="selectbtn" *ngIf="c.type===CellType.BUTTON" (click)="buttonClicked(d)" [disabled]="c.disabled(d)">{{getValueForCell(d, c)}}</button>
+        <app-button *ngIf="c.type===CellType.BUTTON" (click)="buttonClicked(d)" [disabled]="c.disabled(d)"
+                    [label]="getValueForCell(d, c)"></app-button>
       </td>
     </tr>
   </table>

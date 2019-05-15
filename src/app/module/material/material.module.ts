@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  MatButtonModule, MatCardModule, MatCheckboxModule, MatDatepickerModule, MatDialogModule,
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatDialogModule,
   MatIconModule,
   MatInputModule,
-  MatListModule, MatNativeDateModule, MatPaginatorModule, MatSelectModule,
-  MatSidenavModule, MatTableModule,
+  MatListModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatTableModule,
   MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
@@ -56,4 +64,5 @@ import { NewDoctorComponent } from '../../component/manage/new-doctor/new-doctor
     NewDoctorComponent
   ]
 })
-export class MaterialModule { }
+export class MaterialModule {
+}
