@@ -13,7 +13,9 @@ export class ModalComponent implements OnInit {
   @Input() body: TemplateRef<any>;
   @Input() footer: TemplateRef<any>;
   @Input() modalId: string;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
     this.openEvent.subscribe(() => {

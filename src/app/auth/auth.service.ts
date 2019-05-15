@@ -12,6 +12,7 @@ export enum Roles {
   USER = 'ROLE_USER',
   ADMIN = 'ROLE_ADMIN',
 }
+
 export const AUTH_TOKEN_HEADER = 'Authorization';
 export const AUTH_TOKEN_PREFIX = 'Bearer ';
 
@@ -28,7 +29,7 @@ export class AuthService {
   }
 
   auth(username: string, password: string): void {
-    this.http.post(this.authUrl, {username, password}, { observe: 'response' }).pipe(
+    this.http.post(this.authUrl, { username, password }, { observe: 'response' }).pipe(
       tap((response: HttpResponse<null>) => {
         const token = response.headers.get(AUTH_TOKEN_HEADER);
         this.tokenStorageService.setToken(token.replace(AUTH_TOKEN_PREFIX, ''));
@@ -40,8 +41,8 @@ export class AuthService {
       }),
       map(response => response.ok),
       catchError(err => {
-        if (err.status === 401) {
-          console.log('Bad credentials');
+        if (err.status === 403) {
+          alert('Wprowadzono błędne dane logowania');
         }
         return EMPTY;
       })
@@ -59,6 +60,7 @@ export class AuthService {
     }
     throw new Error('Not authenticated');
   }
+
   getUsername(): string {
     if (this.isAuthenticated()) {
       const token = this.tokenStorageService.getToken();
@@ -74,6 +76,7 @@ export class AuthService {
     }
     return false;
   }
+
   logout() {
     this.tokenStorageService.deleteToken();
     this.router.navigate(['login']);

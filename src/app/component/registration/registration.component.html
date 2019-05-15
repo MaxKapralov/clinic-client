@@ -60,8 +60,8 @@
         <app-input type="text" placeholder="E-mail" controlName="email" [parentForm]="registrationForm"></app-input>
         <span class="error red"
               *ngIf="registrationForm.controls['email'].hasError('required') && registrationForm.controls['email'].touched">E-mail jest polem obowiązkowym</span>
-          <span class="error red"
-                *ngIf="registrationForm.controls['email'].hasError('email') && registrationForm.controls['email'].touched">Niepoprawny adres email</span>
+        <span class="error red"
+              *ngIf="registrationForm.controls['email'].hasError('email') && registrationForm.controls['email'].touched">Niepoprawny adres email</span>
       </div>
       <div class="input-message">
         <app-input type="password" placeholder="Hasło" controlName="password"
@@ -76,8 +76,8 @@
                    [parentForm]="registrationForm"></app-input>
         <span class="error red"
               *ngIf="registrationForm.controls['confirmPassword'].hasError('required') && registrationForm.controls['confirmPassword'].touched">Potwierdź hasło jest polem obowiązkowym</span>
-          <span class="error red"
-                *ngIf="registrationForm.controls['confirmPassword'].hasError('matPasswords') && registrationForm.controls['confirmPassword'].touched">Hasła się nie zgadzają</span>
+        <span class="error red"
+              *ngIf="registrationForm.controls['confirmPassword'].hasError('matPasswords') && registrationForm.controls['confirmPassword'].touched">Hasła się nie zgadzają</span>
       </div>
     </div>
     <app-button [disabled]="registrationForm.invalid" (click)="register()" label="Zarejestruj się"></app-button>

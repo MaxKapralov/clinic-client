@@ -5,6 +5,7 @@ import * as _ from 'lodash';
 export enum OptionLabelType {
   NAME, FULLNAME
 }
+
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
@@ -19,7 +20,9 @@ export class SelectComponent implements OnInit {
   @Input() options: any[];
   @Input() label: string;
   @Output() change: EventEmitter<any> = new EventEmitter<any>();
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
@@ -32,9 +35,11 @@ export class SelectComponent implements OnInit {
         return _.get(option, 'name');
     }
   }
+
   getValueByPath(option: any): string {
     return _.get(option, this.valuePath);
   }
+
   selectChange(event) {
     this.change.emit(event);
   }

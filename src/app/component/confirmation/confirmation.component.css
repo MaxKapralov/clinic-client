@@ -5,7 +5,8 @@
   grid-row-gap: 10px;
   margin: 0 auto 0 auto;
 }
-:host-context(.blue-theme) span{
+
+:host-context(.blue-theme) span {
   color: #15375A;
 }
 

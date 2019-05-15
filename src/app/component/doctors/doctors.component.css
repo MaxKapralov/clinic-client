@@ -1,14 +1,21 @@
 .table-container .controls-container {
   display: grid;
   grid-template-columns: auto auto;
-  margin: 20px auto 20px auto;
+  margin: 20px auto 0px auto;
   width: 50vw;
 }
-:host-context(.blue-theme) .table-container{
+
+:host-context(.blue-theme) .table-container {
   background-color: white;
   color: #15375A;
 }
+
 :host-context(.yellow-theme) .table-container {
   background-color: yellow;
   color: black;
+}
+
+:host-context(.black-white-theme) .table-container {
+  background-color: black;
+  color: white;
 }

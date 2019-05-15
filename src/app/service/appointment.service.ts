@@ -13,6 +13,7 @@ export class AppointmentService extends EntityService<Appointment> {
   constructor(http: HttpClient) {
     super(http, 'appointments');
   }
+
   reserve(id: number, username: string): Observable<any> {
     return this.http.put(`${this.url}/${id}`, username).pipe(
       catchError(error => {
@@ -20,14 +21,16 @@ export class AppointmentService extends EntityService<Appointment> {
       })
     );
   }
+
   getHistory(username: string): Observable<Appointment[]> {
     const params = new HttpParams().set('username', username);
-    return this.http.get<Appointment[]>(`${this.url}/history`, {params: params}).pipe(
+    return this.http.get<Appointment[]>(`${this.url}/history`, { params: params }).pipe(
       catchError(error => {
         return EMPTY;
       })
     );
   }
+
   getHistoryForPatient(id: number): Observable<Appointment[]> {
     return this.http.get<Appointment[]>(`${this.url}/history/${id}`).pipe(
       catchError(error => {
@@ -35,15 +38,17 @@ export class AppointmentService extends EntityService<Appointment> {
       })
     );
   }
+
   getAppointmentsForServiceAndDate(params: HttpParams): Observable<Appointment[]> {
-    return this.http.get<Appointment[]>(`${this.url}/calendar`, {params: params}).pipe(
+    return this.http.get<Appointment[]>(`${this.url}/calendar`, { params: params }).pipe(
       catchError(error => {
         return EMPTY;
       })
     );
   }
+
   getForWeek(params: HttpParams): Observable<Appointment[]> {
-    return this.http.get<Appointment[]>(`${this.url}/new-week`, {params: params}).pipe(
+    return this.http.get<Appointment[]>(`${this.url}/new-week`, { params: params }).pipe(
       catchError(error => {
         return EMPTY;
       })

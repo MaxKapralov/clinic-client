@@ -8,13 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class ServiceProxyService {
 
-  constructor(private servicesService: ServicesService) { }
+  constructor(private servicesService: ServicesService) {
+  }
+
   getAllServices(): Observable<Service[]> {
     return this.servicesService.getAll();
   }
+
   deleteService(id: number): Observable<Service> {
     return this.servicesService.delete(id);
   }
+
   addService(service: Service): Observable<Service> {
     return this.servicesService.add(service);
   }

@@ -33,13 +33,59 @@
 :host-context(.yellow-theme) #footer {
   background-color: black;
 }
+
+:host-context(.black-white-theme) #footer {
+  background-color: darkgray;
+}
+
+:host-context(.black-yellow-theme) #footer {
+  background-color: darkgray;
+}
+
 #footer {
   text-align: center;
 }
+
 #footer p {
   color: #ffffff;
   font-size: 12px;
   display: inline;
   font-weight: 600;
 
+}
+
+:host-context(.font-size-small) .bottommenu li a {
+  font-size: 14px;
+}
+
+:host-context(.font-size-medium) .bottommenu li a {
+  font-size: 18px;
+}
+
+:host-context(.font-size-big) .bottommenu li a {
+  font-size: 22px;
+}
+
+:host-context(.font-size-small) .contact ul li {
+  font-size: 12px;
+}
+
+:host-context(.font-size-medium) .contact ul li {
+  font-size: 16px;
+}
+
+:host-context(.font-size-big) .contact ul li {
+  font-size: 20px;
+}
+
+:host-context(.font-size-small) #footer p {
+  font-size: 12px;
+}
+
+:host-context(.font-size-medium) #footer p {
+  font-size: 16px;
+}
+
+:host-context(.font-size-big) #footer p {
+  font-size: 20px;
 }

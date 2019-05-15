@@ -3,28 +3,64 @@
   color: #ffffff;
   border: 1px solid #15375A;
 }
+
 :host-context(.yellow-theme) .button-theme {
   background-color: black;
-  color: white;
+  color: yellow;
   border: 1px solid black;
 }
-:host-context(.yellow-theme) .button-theme[disabled] {
-  background-color: lightgrey;
+
+:host-context(.black-white-theme) .button-theme {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+}
+
+:host-context(.black-white-theme) .button-theme[disabled] {
+  background-color: darkgrey;
   cursor: default;
 }
+
 :host-context(.blue-theme) .button-theme[disabled] {
   background-color: lightgrey;
   cursor: default;
 }
+
+:host-context(.yellow-theme) .button-theme[disabled] {
+  background-color: lightgrey;
+  cursor: default;
+}
+
+:host-context(.black-yellow-theme) .button-theme {
+  background-color: yellow;
+  color: black;
+  border: 1px solid yellow;
+}
+
+:host-context(.black-yellow-theme) .button-theme[disabled] {
+  background-color: darkgrey;
+  cursor: default;
+}
+
 button {
   cursor: pointer;
   width: 100%;
   opacity: 1;
   border-radius: 5px;
-  font-size: 12px;
   text-transform: uppercase;
   display: block;
   margin-top: 10px;
-  margin-bottom: 10px;
   padding: 5px 10px;
+}
+
+:host-context(.font-size-small) button {
+  font-size: 12px;
+}
+
+:host-context(.font-size-medium) button {
+  font-size: 16px;
+}
+
+:host-context(.font-size-big) button {
+  font-size: 20px;
 }

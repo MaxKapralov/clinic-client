@@ -1,3 +1,5 @@
-<p>
-  datepicker works!
-</p>
+<div [formGroup]="parentForm">
+  <label [for]="controlName">{{placeholder}}</label>
+  <input [id]="controlName" [formControlName]="controlName" class="date-input" type="date"
+         [min]="utils.formatDateForDatepicker(minDate)">
+</div>

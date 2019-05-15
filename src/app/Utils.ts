@@ -17,5 +17,6 @@ export const getTime = (date: Date) => moment(date).format('HH:mm');
 export const getMonday = () => {
   const now = moment();
   const diff = now.day() === 0 ? 1 : 8 - now.day();
-  return now.add({days: diff}).set('hours', 9).set('minutes', 0).set('seconds', 0).format('YYYY-MM-DDTHH:mm:ss');
+  return now.add({ days: diff }).set('hours', 9).set('minutes', 0).set('seconds', 0).format('YYYY-MM-DDTHH:mm:ss');
 };
+export const formatDateForDatepicker = (date: Date) => moment(date).format('YYYY-MM-DD');

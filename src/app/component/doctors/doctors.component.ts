@@ -70,7 +70,7 @@ export class DoctorsComponent implements OnInit {
     if (appointment.service) {
       this.appointmentProxy.addAppointment(appointment).subscribe(() => this.getAppointments(this.doctorForm.controls['doctor'].value));
     } else {
-      // todo show message
+      alert('Proszę wybrać usługę');
     }
   }
 }

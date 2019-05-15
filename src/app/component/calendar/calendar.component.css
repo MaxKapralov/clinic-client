@@ -3,15 +3,19 @@
   display: grid;
   grid-template-rows: auto auto;
 }
+
 .controls-container {
   width: 60%;
   margin: 0 auto 0 auto;
   display: grid;
   grid-template-columns: auto auto;
+  padding-top: 30px;
 }
+
 .controls-container div {
-  position: relative
+  position: relative;
 }
+
 :host-context(.blue-theme) .calendar-container {
   background-color: white;
   color: #15375A;

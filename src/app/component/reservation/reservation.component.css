@@ -31,7 +31,6 @@
 
 .container {
   height: max-content;
-  padding-bottom: 50px;
 }
 
 .czas p {
@@ -54,3 +53,65 @@
   color: #15375A;
 }
 
+:host-context(.black-white-theme) h1 {
+  color: white;
+}
+
+:host-context(.black-yellow-theme) h1 {
+  color: yellow;
+}
+
+.pickers {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.pickers app-datepicker, div p {
+  margin: 0 auto 0 auto;
+}
+
+:host-context(.yellow-theme) div p {
+  color: black;
+}
+
+:host-context(.blue-theme) div p {
+  color: #15375A;
+}
+
+:host-context(.black-white-theme) div p {
+  color: white;
+}
+
+:host-context(.black-yellow-theme) div p {
+  color: yellow;
+}
+
+.wrn {
+  width: 450px;
+  margin: 0 auto 0 auto;
+  padding-top: 20px;
+}
+
+:host-context(.font-size-small) .container h1 {
+  font-size: 24px;
+}
+
+:host-context(.font-size-medium) .container h1 {
+  font-size: 26px;
+}
+
+:host-context(.font-size-big) .container h1 {
+  font-size: 28px;
+}
+
+:host-context(.font-size-small) div p {
+  font-size: 16px;
+}
+
+:host-context(.font-size-medium) div p {
+  font-size: 20px;
+}
+
+:host-context(.font-size-big) div p {
+  font-size: 24px;
+}

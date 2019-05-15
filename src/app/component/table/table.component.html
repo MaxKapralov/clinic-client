@@ -6,7 +6,8 @@
     <tr *ngFor="let d of data">
       <td *ngFor="let c of cellData">
         <span *ngIf="c.type!==CellType.BUTTON">{{getValueForCell(d, c)}}</span>
-        <app-button *ngIf="c.type===CellType.BUTTON" (click)="buttonClicked(d)" [disabled]="c.disabled(d)" [label]="getValueForCell(d, c)"></app-button>
+        <app-button *ngIf="c.type===CellType.BUTTON" (click)="buttonClicked(d)" [disabled]="c.disabled(d)"
+                    [label]="getValueForCell(d, c)"></app-button>
       </td>
     </tr>
   </table>

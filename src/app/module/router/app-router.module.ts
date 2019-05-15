@@ -15,6 +15,7 @@ import { ManageComponent } from '../../component/manage/manage.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
+  { path: '', component: LoginPageComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'reservation', component: ReservationComponent, canActivate: [AuthGuardService], data: { expectedRole: Roles.USER } },
   { path: 'personal-data', component: PersonalDataComponent, canActivate: [AuthGuardService], data: { expectedRole: Roles.USER } },

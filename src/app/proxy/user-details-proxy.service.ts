@@ -10,14 +10,17 @@ import { Observable } from 'rxjs';
 })
 export class UserDetailsProxyService {
 
-  constructor(private userDetailsService: UserDetailsService, private authService: AuthService) { }
+  constructor(private userDetailsService: UserDetailsService, private authService: AuthService) {
+  }
 
   getUserByUsername(): Observable<UserDetails[]> {
     return this.userDetailsService.getAll(new HttpParams().set('username', this.authService.getUsername()));
   }
+
   updateUserDetails(user: UserDetails): void {
     this.userDetailsService.update(user).subscribe();
   }
+
   getAllUsers(): Observable<UserDetails[]> {
     return this.userDetailsService.getAll();
   }

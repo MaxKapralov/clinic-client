@@ -34,7 +34,7 @@ export abstract class EntityService<T extends Entity> {
   }
 
   getAll(params?: HttpParams): Observable<T[]> {
-    return this.http.get<T[]>(this.url, {params: params}).pipe(
+    return this.http.get<T[]>(this.url, { params: params }).pipe(
       catchError(error => {
         console.log(error);
         return EMPTY;

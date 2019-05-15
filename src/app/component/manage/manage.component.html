@@ -4,13 +4,15 @@
 </div>
 <div id="doctors" class="tabcontent">
   <app-button (click)="newDoctorModal.open()" label="Dodaj Nowego Lekarza"></app-button>
-  <app-table [data]="doctors" [cellData]="doctorsCellData" [headers]="doctorsHeaders" (operationClick)="deleteDoctor($event)"></app-table>
+  <app-table [data]="doctors" [cellData]="doctorsCellData" [headers]="doctorsHeaders"
+             (operationClick)="deleteDoctor($event)"></app-table>
 </div>
 
 <div id="services" class="tabcontent">
   <app-button (click)="newServiceModal.open()" label="Dodaj Nową Usługę"></app-button>
   <div class="services-container">
-    <app-table [data]="services" (operationClick)="deleteService($event)" [headers]="servicesHeaders" [cellData]="servicesCellData"></app-table>
+    <app-table [data]="services" (operationClick)="deleteService($event)" [headers]="servicesHeaders"
+               [cellData]="servicesCellData"></app-table>
   </div>
 
 </div>

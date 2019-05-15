@@ -1,6 +1,6 @@
 <div class="personal-data-cont">
   <div *ngIf="userDetails">
-    <h1>Dane Personalne</h1>
+    <h1 class="hd">Dane Personalne</h1>
     <div [formGroup]="userDetailsForm">
       <app-input controlName="name" [parentForm]="userDetailsForm" label="Imię"></app-input>
       <app-input controlName="surname" [parentForm]="userDetailsForm" label="Nazwisko"></app-input>
@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="buttons">
     <app-button [disabled]="!disableFields" (click)="editDetails()" label="Edytuj"></app-button>
     <app-button label="Potwierdź" [disabled]="disableFields" (click)="updateDetails()"></app-button>
   </div>

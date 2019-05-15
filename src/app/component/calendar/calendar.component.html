@@ -2,14 +2,8 @@
   <div [formGroup]="calendarForm" class="controls-container">
     <app-select [parentForm]="calendarForm" controlName="serviceId" [options]="services" valuePath="id"
                 [optionLabelType]="OptionLabelTypes.NAME" label="Wybierz usługę"></app-select>
-    <div>
-      <mat-form-field>
-        <input matInput [matDatepicker]="pickerFrom" placeholder="Wybierz date" formControlName="date"
-               [min]="minDate">
-        <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
-        <mat-datepicker touchUi #pickerFrom></mat-datepicker>
-      </mat-form-field>
-    </div>
+    <app-datepicker [parentForm]="calendarForm" controlName="date" placeholder="Wybierz date"
+                    [minDate]="minDate"></app-datepicker>
   </div>
   <app-button label="Wybierz"
               [disabled]="calendarForm.controls['serviceId'].invalid && calendarForm.controls['date'].invalid"

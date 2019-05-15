@@ -10,6 +10,7 @@ import { AuthService } from '../../auth/auth.service';
 export class LoginPageComponent implements OnInit {
 
   loginForm: FormGroup;
+
   constructor(private builder: FormBuilder, private authService: AuthService) {
     this.loginForm = builder.group({
       username: [null, Validators.required],
@@ -19,6 +20,7 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit() {
   }
+
   login() {
     const username = this.loginForm.controls['username'].value;
     const password = this.loginForm.controls['password'].value;

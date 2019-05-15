@@ -19,6 +19,7 @@ export class ConfirmationComponent implements OnInit {
 
   @ViewChild('modal') modal: ModalComponent;
   @Output() onAccept: EventEmitter<void> = new EventEmitter();
+
   constructor(private appointmentProxyService: AppointmentProxyService, private authService: AuthService) {
   }
 
@@ -29,6 +30,7 @@ export class ConfirmationComponent implements OnInit {
     this.data = appointment;
     this.openSubject.next();
   }
+
   acceptReservation() {
     this.appointmentProxyService.reserve(this.data.id, this.authService.getUsername()).subscribe(() => {
       this.modal.closeModal();

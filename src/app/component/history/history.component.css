@@ -1,6 +1,19 @@
 :host-context(.blue-theme) .history-container {
   background-color: white;
 }
+
 :host-context(.yellow-theme) .history-container {
   background-color: yellow;
+}
+
+:host-context(.font-size-small) .history-container p {
+  font-size: 14px;
+}
+
+:host-context(.font-size-medium) .history-container p {
+  font-size: 18px;
+}
+
+:host-context(.font-size-big) .history-container p {
+  font-size: 22px;
 }

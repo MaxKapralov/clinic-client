@@ -80,13 +80,17 @@
   background-color: #15375A;
   color: white;
 }
+
 :host-context(.blue-theme) .modal-content {
   border: 1px solid #15375A;
   background-color: white;
+  color: #15375A;
 }
+
 :host-context(.yellow-theme) .modal-content {
   border: 1px solid black;
   background-color: yellow;
+  color: black;
 }
 
 :host-context(.blue-theme) .close:hover, .close:focus {
@@ -105,4 +109,64 @@
 
 :host-context(.yellow-theme) .close:hover, .close:focus {
   color: yellow;
+}
+
+:host-context(.black-white-theme) .modal-content {
+  border: 1px solid white;
+  background-color: black;
+  color: white
+}
+
+:host-context(.black-white-theme) .modal-header {
+  background-color: darkgrey;
+  color: black;
+}
+
+:host-context(.black-white-theme) .modal-footer {
+  background-color: darkgrey;
+  color: black;
+}
+
+:host-context(.black-white-theme) .close {
+  color: black;
+}
+
+:host-context(.black-white-theme) .close:hover, .close:focus {
+  color: white;
+}
+
+:host-context(.black-yellow-theme) .modal-content {
+  border: 1px solid yellow;
+  background-color: black;
+  color: yellow;
+}
+
+:host-context(.black-yellow-theme) .modal-header {
+  background-color: darkgrey;
+  color: yellow;
+}
+
+:host-context(.black-yellow-theme) .modal-footer {
+  background-color: darkgrey;
+  color: yellow;
+}
+
+:host-context(.black-yellow-theme) .close {
+  color: white;
+}
+
+:host-context(.black-yellow-theme) .close:hover, .close:focus {
+  color: yellow;
+}
+
+:host-context(.font-size-small) .modal-body {
+  font-size: 14px;
+}
+
+:host-context(.font-size-medium) .modal-body {
+  font-size: 18px;
+}
+
+:host-context(.font-size-big) .modal-body {
+  font-size: 22px;
 }
